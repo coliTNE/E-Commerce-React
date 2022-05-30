@@ -1,13 +1,11 @@
-import NavBar from './components/NavBar';
-
-const position = {
-  zero: 0,
-}
+import Main from "./components/Main";
+import NavBar from "./components/NavBar";
 
 function App() {
   return (
     <div style={{ backgroundColor: "#F7F7F7", height: "110vh" }}>
-      <header style={{ width: "100%", position: "fixed", left: position.zero, top: position.zero, backgroundColor: "#fff", borderBottom: "solid 1px #EAEAEA" }}><NavBar /></header>
+      <NavBar />
+      <Main />
     </div>
   );
 }
