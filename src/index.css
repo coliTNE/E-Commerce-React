@@ -4,7 +4,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   background-color: #f7f7f7;
-
+  text-align: center;
   box-sizing: border-box;
 }
 
@@ -82,4 +82,10 @@ header {
 main {
   margin-top: 86px;
   height: 110vh;
+}
+
+.main__h2 {
+  padding-top: 2em;
+  font-size: 1.6rem;
+  color: #3f3844;
 }
