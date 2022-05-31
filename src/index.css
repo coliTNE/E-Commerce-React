@@ -1,11 +1,10 @@
 body {
   margin: 0;
-  margin-top: 86px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  background-color: #F7F7F7;
-  height: 110vh;
+  background-color: #f7f7f7;
+
   box-sizing: border-box;
 }
 
@@ -18,8 +17,8 @@ header {
   position: fixed;
   left: 0;
   top: 0;
-  background-color: #fff; 
-  border-bottom: solid 1px #EAEAEA;
+  background-color: #fff;
+  border-bottom: solid 1px #eaeaea;
 }
 
 .nav {
@@ -27,14 +26,14 @@ header {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  color: #3F3844;
+  color: #3f3844;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav h1 {
   font-size: 1.7rem;
-  letter-spacing: .6px;
+  letter-spacing: 0.6px;
 }
 
 .nav__ul {
@@ -46,12 +45,12 @@ header {
 
 .nav__ul a {
   text-decoration: none;
-  color: #3F3844;
-  transition: color ease .4s;
+  color: #3f3844;
+  transition: color ease 0.4s;
 }
 
 .nav__ul a:hover {
-  color: #FA824C;
+  color: #fa824c;
 }
 
 .nav__li {
@@ -64,5 +63,23 @@ header {
 }
 
 .nav__li--img {
-  padding-left: 1.5em;
+  padding: 0 1.4em 0 1em;
+  position: relative;
+  display: flex;
+}
+
+.nav__shoppingCart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #fa824c;
+  color: #f7f7f7;
+  padding: 0 .4em .1em .4em;
+  border-radius: 50%;
+  align-self: center;
+}
+
+main {
+  margin-top: 86px;
+  height: 110vh;
 }
