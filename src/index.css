@@ -19,6 +19,7 @@ header {
   top: 0;
   background-color: #fff;
   border-bottom: solid 1px #eaeaea;
+  z-index: 999;
 }
 
 .nav {
@@ -74,12 +75,55 @@ header {
   right: 0;
   background-color: #fa824c;
   color: #f7f7f7;
-  padding: 0 .4em .1em .4em;
+  padding: 0 0.4em 0.1em 0.4em;
   border-radius: 50%;
   align-self: center;
 }
 
 main {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
   margin-top: 86px;
+  padding-top: 5em;
   height: 110vh;
+}
+
+.itemCount__Card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  width: 450px;
+  height: 540px;
+  background-color: #fff;
+  border: 2px solid #eaeaea;
+}
+
+.itemCount__Img {
+  width: 60%;
+}
+
+.itemCount__Buttons {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f0f0f0;
+}
+
+.itemCount__Operator {
+  width: 20%;
+  cursor: pointer;
+  font-size: 1.2em;
+  border: none;
+  transition: all ease 0.4s;
+}
+
+.itemCount__Operator:hover {
+  background-color: #fa824c;
 }
