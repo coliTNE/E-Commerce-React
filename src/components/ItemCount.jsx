@@ -3,16 +3,11 @@ import ShoppingCartImage from "../Images/carritovector.png";
 
 export default function ItemCount({ stock }) {
   const [x, setX] = useState(0);
-  const countPlus = () => {
-    if (x < stock) {
-      setX(x + 1);
-    }
+
+  const itemCounter = (stock, x, onAdd) => {
+    if ((onAdd && x < stock) || (!onAdd && x > 0)) setX(x + (onAdd ? 1 : -1));
   };
-  const countMinus = () => {
-    if (x > 0) {
-      setX(x - 1);
-    }
-  };
+
   return (
     <div className="itemCount__Card">
       <img
@@ -23,7 +18,7 @@ export default function ItemCount({ stock }) {
       <div className="itemCount__Buttons">
         <button
           onClick={() => {
-            countMinus();
+            itemCounter(stock, x, false);
           }}
           className="itemCount__Operator"
         >
@@ -32,7 +27,7 @@ export default function ItemCount({ stock }) {
         <p className="itemCount__Counter">{x}</p>
         <button
           onClick={() => {
-            countPlus();
+            itemCounter(stock, x, true);
           }}
           className="itemCount__Operator"
         >
