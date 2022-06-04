@@ -87,7 +87,7 @@ main {
   text-align: center;
   margin-top: 86px;
   padding-top: 5em;
-  height: 110vh;
+  min-height: 110vh;
 }
 
 .itemCount__Card {
@@ -97,8 +97,8 @@ main {
   justify-content: center;
   margin: 0 auto;
   position: relative;
-  width: 450px;
-  height: 540px;
+  width: 300px;
+  height: 360px;
   background-color: #fff;
   border: 2px solid #eaeaea;
 }

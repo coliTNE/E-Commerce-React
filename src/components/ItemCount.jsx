@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import ShoppingCartImage from "../Images/carritovector.png";
 
-export default function ItemCount({ stock }) {
-  const [x, setX] = useState(0);
+export default function ItemCount({ stock, initial }) {
+  const [x, setX] = useState(initial);
 
   const itemCounter = (stock, x, onAdd) => {
-    if ((onAdd && x < stock) || (!onAdd && x > 0)) setX(x + (onAdd ? 1 : -1));
+    if ((onAdd && x < stock) || (!onAdd && x > initial)) setX(x + (onAdd ? 1 : -1));
   };
 
   return (
@@ -30,6 +30,7 @@ export default function ItemCount({ stock }) {
             itemCounter(stock, x, true);
           }}
           className="itemCount__Operator"
+          
         >
           +
         </button>

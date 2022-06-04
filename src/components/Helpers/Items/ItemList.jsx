@@ -1,7 +1,10 @@
-import React from 'react'
+import Item from "./Item";
 
-export default function ItemList() {
+export default function ItemList({ products }) {
+    console.log(products)
   return (
-    <div>ItemList</div>
-  )
+    <div className="itemsList">
+      <Item product={products}/>
+    </div>
+  );
 }

@@ -1,7 +1,13 @@
 import React from 'react'
 
-export default function Item() {
+export default function Item({products}) {
+
   return (
-    <div>Item</div>
+    <>
+    </>
   )
 }
+
+
+
+
