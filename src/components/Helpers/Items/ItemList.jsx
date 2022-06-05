@@ -1,10 +1,10 @@
-import Item from "./Item";
+import React from 'react'
+import Item from './Item'
 
-export default function ItemList({ products }) {
-    console.log(products)
+export default function ItemList({products}) {
   return (
-    <div className="itemsList">
-      <Item product={products}/>
+    <div className="main__shoesCarrousel">
+      {products?.map(product => <Item key={products.id} product={product}/>)}
     </div>
-  );
+  )
 }

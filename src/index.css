@@ -1,9 +1,19 @@
+:root {
+  --whiteCultured: #f7f7f7;
+  --platinum: #eaeaea;
+  --blackCoffee: #3f3844;
+  --brownSaddle: #874000;
+  --orangeAlloy: #bc5f04;
+  --redRyb: #f4442e;
+  --greenWinter: #53917e;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
-  background-color: #f7f7f7;
+  background-color: var(--whiteCultured);
 
   box-sizing: border-box;
 }
@@ -18,7 +28,7 @@ header {
   left: 0;
   top: 0;
   background-color: #fff;
-  border-bottom: solid 1px #eaeaea;
+  border-bottom: solid 1px var(--platinum);
   z-index: 999;
 }
 
@@ -27,7 +37,7 @@ header {
   width: 100%;
   margin: 0 auto;
   display: flex;
-  color: #3f3844;
+  color: var(--blackCoffee);
   justify-content: space-between;
   align-items: center;
 }
@@ -46,12 +56,12 @@ header {
 
 .nav__ul a {
   text-decoration: none;
-  color: #3f3844;
+  color: var(--blackCoffee);
   transition: color ease 0.4s;
 }
 
 .nav__ul a:hover {
-  color: #fa824c;
+  color: var(--orangeAlloy);
 }
 
 .nav__li {
@@ -73,21 +83,24 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-  background-color: #fa824c;
-  color: #f7f7f7;
+  background-color: var(--orangeAlloy);
+  color: var(--platinum);
   padding: 0 0.4em 0.1em 0.4em;
   border-radius: 50%;
   align-self: center;
 }
 
 main {
+  margin-top: 86px;
+}
+
+.main__container {
+  margin: 0 auto;
+  padding: 4em 0;
+  text-align: center;
   max-width: 1400px;
   width: 100%;
-  margin: 0 auto;
-  text-align: center;
-  margin-top: 86px;
-  padding-top: 5em;
-  min-height: 110vh;
+  border-bottom: 2px solid var(--platinum);
 }
 
 .itemCount__Card {
@@ -100,7 +113,8 @@ main {
   width: 300px;
   height: 360px;
   background-color: #fff;
-  border: 2px solid #eaeaea;
+  border: 1px solid var(--blackCoffee);
+  color: var(--whiteCultured);
 }
 
 .itemCount__Img {
@@ -113,7 +127,7 @@ main {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #f0f0f0;
+  background-color: var(--brownSaddle);
 }
 
 .itemCount__Operator {
@@ -122,8 +136,76 @@ main {
   font-size: 1.2em;
   border: none;
   transition: all ease 0.4s;
+  background-color: var(--brownSaddle);
+  color: var(--whiteCultured);
 }
 
 .itemCount__Operator:hover {
-  background-color: #fa824c;
+  background-color: var(--orangeAlloy);
+}
+
+.main__shoesCarrousel {
+  display: flex;
+  gap: 2em;
+  flex-flow: row wrap;
+}
+
+.main__shoeCard {
+  width: 300px;
+  height: 360px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  line-height: 0;
+  background-color: #fff;
+  border: 2px solid var(--platinum);
+  cursor: pointer;
+  box-shadow: var(--platinum) 0 0 0;
+  transition: all ease 0.4s;
+}
+
+.main__shoeCard:hover {
+  border: 2px solid #dfdfdf;
+  box-shadow: var(--platinum) 0 0 2px 1px;
+}
+
+.shoeCard__imgContainer {
+  position: relative;
+}
+
+.shoeCard__img {
+  padding-top: 0.7em;
+  max-width: 80%;
+  z-index: 10;
+}
+.shoeCard__brand {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 0.2em;
+  width: 4.4em;
+  z-index: 11;
+}
+
+.shoeCard__dataContainer {
+  position: relative;
+  text-align: start;
+  margin: 0 0.8em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.shoeCard__type {
+  color: var(--brownSaddle);
+}
+
+.shoeCard__descrip {
+  color: var(--blackCoffee);
+}
+
+.shoeCard__price {
+  color: var(--greenWinter);
+  justify-self: flex-end;
 }
