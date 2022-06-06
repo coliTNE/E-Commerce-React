@@ -167,18 +167,34 @@ main {
 
 .main__shoeCard:hover {
   border: 2px solid #dfdfdf;
-  box-shadow: var(--platinum) 0 0 2px 1px;
+  box-shadow: #dadada 0 0 3px 2px;
 }
 
 .shoeCard__imgContainer {
   position: relative;
+  width: 100%;
 }
 
 .shoeCard__img {
   padding-top: 0.7em;
-  max-width: 80%;
   z-index: 10;
+  width: 80%;
 }
+
+.shoeCard__secondaryImg {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  padding-top: 0.7em;
+  width: 80%;
+  opacity: 0;
+  transition: all ease 0.4s;
+}
+
+.main__shoeCard:hover .shoeCard__secondaryImg{
+  opacity: 1;
+}
+
 .shoeCard__brand {
   position: absolute;
   top: 0;
@@ -199,6 +215,7 @@ main {
 
 .shoeCard__type {
   color: var(--brownSaddle);
+  padding-bottom: .2em;
 }
 
 .shoeCard__descrip {
