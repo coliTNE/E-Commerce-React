@@ -6,6 +6,9 @@
   --orangeAlloy: #bc5f04;
   --redRyb: #f4442e;
   --greenWinter: #53917e;
+  --blueTufts: #5288d0;
+  --silver: #c4c2c2;
+  --grayDim: #716a5c;
 }
 
 body {
@@ -192,7 +195,7 @@ main {
   transition: all ease 0.4s;
 }
 
-.main__shoeCard:hover .shoeCard__secondaryImg{
+.main__shoeCard:hover .shoeCard__secondaryImg {
   opacity: 1;
 }
 
@@ -216,7 +219,7 @@ main {
 
 .shoeCard__type {
   color: var(--brownSaddle);
-  padding-bottom: .2em;
+  padding-bottom: 0.2em;
 }
 
 .shoeCard__descrip {
@@ -226,4 +229,175 @@ main {
 .shoeCard__price {
   color: var(--greenWinter);
   justify-self: flex-end;
+}
+
+.itemDetail {
+  background-color: #fff;
+  border: 2px solid var(--platinum);
+  min-height: 100vh;
+  display: flex;
+  border-radius: 5px;
+}
+
+.itemDetail__column {
+  margin-top: 3em;
+  width: 100%;
+}
+
+.itemDetail__column--images {
+  display: flex;
+}
+
+.columnImages__littleImages {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.columnImages__littleImages img {
+  width: 70px;
+  border: 1px solid var(--platinum);
+  cursor: pointer;
+}
+
+.columnImages__bigImage {
+  margin-left: 3em;
+  position: relative;
+  width: 75%;
+}
+
+.bigImage {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.brandImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 0.2em;
+  width: 6.4em;
+  z-index: 11;
+}
+
+.itemDetail__column--description {
+  margin-left: 2em;
+  text-align: start;
+}
+
+.mainData__h2 {
+  color: var(--blueTufts);
+  font-size: 2em;
+  margin: 0;
+  font-weight: 400;
+}
+
+.mainData__type {
+  color: var(--greenWinter);
+}
+
+.mainData__price {
+  font-size: 2em;
+  font-weight: 350;
+  color: var(--blackCoffee);
+}
+
+.mainData__colors {
+  font-weight: 300;
+  color: var(--blackCoffee);
+}
+
+.itemDetail__secondaryData {
+  padding-top: 1em;
+}
+
+.itemDetail__h3 {
+  text-transform: uppercase;
+  font-size: 1em;
+  color: var(--blueTufts);
+}
+
+.secondaryData__sizesList {
+  display: flex;
+  list-style: none;
+  justify-content: flex-start;
+  padding: 0;
+  gap: 0.4em;
+}
+
+.secondaryData__sizesItem {
+  text-align: center;
+  font-size: 13px;
+  width: 44px;
+  height: 44px;
+  color: var(--grayDim);
+  border: var(--silver) solid 1px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.secondaryData__sizesItem:hover {
+  color: var(--blueTufts);
+  border: var(--grayDim) solid 1px;
+}
+
+.secondaryData__models {
+  display: flex;
+  padding-top: .5em;
+  gap: 0.5em;
+}
+
+.secondaryData__model {
+  width: 70px;
+  border: 1px solid var(--platinum);
+  cursor: pointer;
+}
+
+.itemCheckout__stockCounter {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.itemCheckout__p {
+  color: var(--grayDim);
+  font-size: 1.1em;
+}
+
+.itemCheckout__span {
+  color: var(--blackCoffee);
+}
+
+.itemCheckout__stock {
+  color: var(--grayDim);
+  font-size: 1.1em;
+}
+
+.itemCheckout__buttons{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: .8em 0;
+  padding-right: 4em;
+}
+.itemCheckout__buttons button{
+  width: 100%;
+  font-size: 1.2em;
+  padding: .6em 0;
+  cursor: pointer;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+}
+
+.itemCheckout__blueButton {
+  background-color: var(--blueTufts);
+  color: var(--whiteCultured);
+}
+
+.itemCheckout__grayButton {
+  color: var(--blueTufts);
+  background-color: #4189e626;
 }

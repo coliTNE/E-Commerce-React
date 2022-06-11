@@ -1,15 +1,14 @@
 import React from "react";
 
-export default function NavStringsLayout({ navBarOptions }) {
+export default function NavStringsLayout({ navBarOption }) {
+  const {title} = navBarOption
   return (
     <>
-      {navBarOptions.map((item) => (
-        <a href={item} key={item.id}>
-          <li key={item.id} className="nav__li">
-            {item}
+        <a href={title}>
+          <li className="nav__li">
+            {title}
           </li>
         </a>
-      ))}
     </>
   );
 }
