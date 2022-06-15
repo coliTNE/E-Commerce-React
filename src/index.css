@@ -7,6 +7,7 @@
   --redRyb: #f4442e;
   --greenWinter: #53917e;
   --blueTufts: #5288d0;
+  --blueYonder: #4573b0;
   --silver: #c4c2c2;
   --grayDim: #716a5c;
 }
@@ -70,6 +71,7 @@ header {
 .nav__li {
   padding: 0 1em;
   font-size: 1.2rem;
+  text-transform: capitalize;
 }
 
 .nav__img {
@@ -104,6 +106,55 @@ main {
   max-width: 1400px;
   width: 100%;
   border-bottom: 2px solid var(--platinum);
+}
+
+.filter {
+  text-align: start;
+  display: flex;
+  color: var(--blackCoffee);
+  padding-bottom: 2em;
+}
+
+.filter h2 {
+  font-weight: 500;
+}
+
+.filter__list {
+  text-align: start;
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.filter__list a {
+  text-decoration: none;
+  color: var(--blackCoffee);
+}
+
+.filter__listItem {
+  padding: 0 1em;
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  margin: 0;
+  position: relative;
+}
+
+.filter__listItem::after {
+  content: "";
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  height: 2px;
+  background: var(--orangeAlloy);
+  transform: scale(0, 1);
+  transition: all ease-out .4s;
+  transform-origin: center;
+  top: 0;
+}
+
+
+.filter__listItem:hover::after {
+  transform: scale(1.1);
 }
 
 .itemCount__Card {
@@ -151,6 +202,10 @@ main {
   display: flex;
   gap: 2em;
   flex-flow: row wrap;
+}
+
+.main__shoesCarrousel a {
+  text-decoration: none;
 }
 
 .main__shoeCard {
@@ -233,18 +288,24 @@ main {
 
 .itemDetail {
   background-color: #fff;
-  border: 2px solid var(--platinum);
   min-height: 100vh;
-  display: flex;
+  border: 2px solid var(--platinum);
   border-radius: 5px;
 }
 
-.itemDetail__column {
+.itemMainDetail,
+.itemAdditionalDetail {
+  margin-left: 3em;
+  display: flex;
+}
+
+.itemMainDetail__column,
+.itemAdditionalDetail__column {
   margin-top: 3em;
   width: 100%;
 }
 
-.itemDetail__column--images {
+.itemMainDetail__column--images {
   display: flex;
 }
 
@@ -252,7 +313,7 @@ main {
   width: 20%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.5em;
 }
 
@@ -263,7 +324,6 @@ main {
 }
 
 .columnImages__bigImage {
-  margin-left: 3em;
   position: relative;
   width: 75%;
 }
@@ -282,7 +342,7 @@ main {
   z-index: 11;
 }
 
-.itemDetail__column--description {
+.itemMainDetail__column--description {
   margin-left: 2em;
   text-align: start;
 }
@@ -309,11 +369,11 @@ main {
   color: var(--blackCoffee);
 }
 
-.itemDetail__secondaryData {
+.itemMainDetail__secondaryData {
   padding-top: 1em;
 }
 
-.itemDetail__h3 {
+.itemMainDetail__h3 {
   text-transform: uppercase;
   font-size: 1em;
   color: var(--blueTufts);
@@ -345,7 +405,7 @@ main {
 
 .secondaryData__models {
   display: flex;
-  padding-top: .5em;
+  padding-top: 0.5em;
   gap: 0.5em;
 }
 
@@ -353,6 +413,11 @@ main {
   width: 70px;
   border: 1px solid var(--platinum);
   cursor: pointer;
+}
+
+.secondaryData__model:hover,
+.columnImages__littleImages img:hover {
+  border: var(--silver) solid 1px;
 }
 
 .itemCheckout__stockCounter {
@@ -375,21 +440,22 @@ main {
   font-size: 1.1em;
 }
 
-.itemCheckout__buttons{
+.itemCheckout__buttons {
   display: flex;
   align-items: center;
   gap: 1em;
-  padding: .8em 0;
+  padding: 0.8em 0;
   padding-right: 4em;
 }
-.itemCheckout__buttons button{
+.itemCheckout__buttons button {
   width: 100%;
   font-size: 1.2em;
-  padding: .6em 0;
+  padding: 0.6em 0;
   cursor: pointer;
   border-radius: 8px;
   border: none;
   font-weight: 700;
+  transition: all ease 0.4s;
 }
 
 .itemCheckout__blueButton {
@@ -397,7 +463,39 @@ main {
   color: var(--whiteCultured);
 }
 
+.itemCheckout__blueButton:hover {
+  background-color: var(--blueYonder);
+}
+
 .itemCheckout__grayButton {
   color: var(--blueTufts);
   background-color: #4189e626;
+}
+
+.itemCheckout__grayButton:hover {
+  background-color: #4189e63e;
+}
+
+.itemAdditionalDetail__column {
+  text-align: start;
+  color: var(--grayDim);
+}
+
+.itemAdditionalDetail__column--details h3,
+.itemAdditionalDetail__column--materials h3 {
+  font-size: 1.3em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.itemAdditionalDetail__column--details p {
+  margin: 0.1em;
+}
+
+.itemAdditionalDetail__column--materials ul {
+  margin-left: 2em;
+}
+
+.itemAdditionalDetail__column--materials li {
+  padding: 0.5em 0;
 }

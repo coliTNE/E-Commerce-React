@@ -1,21 +1,21 @@
 import React from "react";
 import ShoppingCartImage from "../Images/carritovector.png";
+import { Link } from "react-router-dom"
 
 export default function CartWidget() {
   let shoppingCart = 0;
   return (
     <div>
-      <a href="">
-        <li className="nav__li nav__li--img">
+      <li className="nav__li nav__li--img">
+        <Link to="carrito">
           <img
             src={ShoppingCartImage}
             alt="carritoMarron"
             className="nav__img"
           />
           <span className="nav__shoppingCart">{shoppingCart}</span>
-        </li>
-      </a>
+        </Link>
+      </li>
     </div>
-
   );
 }

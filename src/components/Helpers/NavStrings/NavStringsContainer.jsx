@@ -5,15 +5,15 @@ export default function NavStringsContainer() {
   const navBarOptions = [
     {
       id: 1,
-      title: "Inicio",
+      title: "inicio",
     },
     {
       id: 2,
-      title: "Nosotros",
+      title: "nosotros",
     },
     {
       id: 3,
-      title: "Contacto",
+      title: "contacto",
     },
   ];
   return (
