@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
-export default function ItemDetail({itemDescrip}) {
-  // console.log("itemDescrip" + itemDescrip);
-
+export default function ItemDetail({ itemDescrip }) {
   const {
     brand,
     title,
@@ -18,7 +17,7 @@ export default function ItemDetail({itemDescrip}) {
     materials,
   } = itemDescrip;
 
-  // const [bigPicture, setBigPicture] = useState(pictureUrl)
+  const [bigPicture, setBigPicture] = useState(pictureUrl);
 
   return (
     <>
@@ -33,9 +32,9 @@ export default function ItemDetail({itemDescrip}) {
                       key={item.id}
                       src={item.pictureUrl}
                       alt={`${brand} shoe ${item.id}`}
-                      // onClick={() => {
-                      //   setBigPicture(item.pictureUrl)
-                      // }}
+                      onClick={() => {
+                        setBigPicture(item.pictureUrl);
+                      }}
                     />
                   ))}
                 </div>
@@ -46,7 +45,7 @@ export default function ItemDetail({itemDescrip}) {
                     className="brandImage"
                   />
                   <img
-                    src={pictureUrl}
+                    src={bigPicture ? bigPicture : pictureUrl}
                     alt={`${brand} logo`}
                     className="bigImage"
                   />
@@ -68,17 +67,27 @@ export default function ItemDetail({itemDescrip}) {
                       </li>
                     ))}
                   </ul>
-                  <h3 className="itemMainDetail__h3">Modelos:</h3>
-                  <div className="secondaryData__models">
-                    {models?.map((item) => (
-                      <img
-                        key={item.id}
-                        src={item.pictureUrl}
-                        alt={`${brand} shoe ${item.id}`}
-                        className="secondaryData__model"
-                      />
-                    ))}
-                  </div>
+                  {models ? (
+                    <>
+                      <h3 className="itemMainDetail__h3">Modelos:</h3>
+                      <div className="secondaryData__models">
+                        {models?.map((item) => (
+                          <Link
+                            reloadDocument
+                            to={`/item/${item.id}`}
+                            key={item.id}
+                          >
+                            <img
+                              key={item.id}
+                              src={item.pictureUrl}
+                              alt={`${brand} shoe ${item.id}`}
+                              className="secondaryData__model"
+                            />
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  ) : null}
                 </div>
                 <div className="itemCheckout">
                   <h3 className="itemMainDetail__h3">Stock Disponible</h3>
