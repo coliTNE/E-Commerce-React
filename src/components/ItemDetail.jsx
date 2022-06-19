@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ itemDescrip }) {
   const {
@@ -13,15 +14,22 @@ export default function ItemDetail({ itemDescrip }) {
     images,
     sizes,
     models,
+    stock,
     details,
     materials,
   } = itemDescrip;
 
   const [bigPicture, setBigPicture] = useState(pictureUrl);
 
+  const [counterLayout, setCounterLayout] = useState(true);
+
+  const onAdd = () => {
+    setCounterLayout(false)
+  }
+
   return (
     <>
-      {itemDescrip ? (
+      {itemDescrip && (
         <main>
           <div className="itemDetail">
             <div className="itemMainDetail">
@@ -67,7 +75,7 @@ export default function ItemDetail({ itemDescrip }) {
                       </li>
                     ))}
                   </ul>
-                  {models ? (
+                  {models && (
                     <>
                       <h3 className="itemMainDetail__h3">Modelos:</h3>
                       <div className="secondaryData__models">
@@ -87,26 +95,42 @@ export default function ItemDetail({ itemDescrip }) {
                         ))}
                       </div>
                     </>
-                  ) : null}
+                  )}
                 </div>
-                <div className="itemCheckout">
-                  <h3 className="itemMainDetail__h3">Stock Disponible</h3>
-                  <div className="itemCheckout__stockCounter">
-                    <p className="itemCheckout__p">
-                      Cantidad:{" "}
-                      <span className="itemCheckout__span">1 unidad</span>
-                    </p>
-                    <p className="itemCheckout__stock">(14 Disponible)</p>
+                {counterLayout ? (
+                  <div className="itemCheckout">
+                    {stock <= 10 ? (
+                      <h3 className="itemMainDetail__h3">
+                        Stock Disponible
+                        <span className="itemCheckout__stock--last">
+                          (Ultimas unidades!)
+                        </span>
+                      </h3>
+                    ) : (
+                      <h3 className="itemMainDetail__h3">Stock Disponible</h3>
+                    )}
+                    <div className="itemCheckout__stockCounter">
+                      <p className="itemCheckout__p">
+                        Cantidad: <span className="itemCheckout__span"></span>
+                      </p>
+                      <ItemCount stock={stock} initial={1} />
+                      <p className="itemCheckout__p itemCheckout__stock">{`(${stock} disponibles)`}</p>
+                    </div>
+                    <div className="itemCheckout__buttons">
+                        <button className="itemCheckout__grayButton" onClick={onAdd}>
+                          Agregar al carrito
+                        </button>
+                    </div>
                   </div>
+                ) : (
                   <div className="itemCheckout__buttons">
-                    <button className="itemCheckout__blueButton">
-                      Comprar ahora
-                    </button>
-                    <button className="itemCheckout__grayButton">
-                      Agregar al carrito
-                    </button>
+                    <Link to="/cart" className="itemCheckout__link">
+                      <button className="itemCheckout__blueButton">
+                        Comprar ahora
+                      </button>
+                    </Link>
                   </div>
-                </div>
+                )}
               </div>
             </div>
             <div className="itemAdditionalDetail">
@@ -127,7 +151,7 @@ export default function ItemDetail({ itemDescrip }) {
             </div>
           </div>
         </main>
-      ) : null}
+      )}
     </>
   );
 }

@@ -4,6 +4,9 @@ import { useState } from "react";
 export const UsePromise = (array, brand) => {
   const [data, setData] = useState([]);
 
+
+//  CREAR SWITCH CASE PARA FILTRAR DE CUALQUIER FORMA POSIBLE
+
   useEffect(() => {
     const shoesList = new Promise((res, rej) => {
       setTimeout(() => {

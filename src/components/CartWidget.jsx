@@ -7,7 +7,7 @@ export default function CartWidget() {
   return (
     <div>
       <li className="nav__li nav__li--img">
-        <Link to="carrito">
+        <Link to="/cart">
           <img
             src={ShoppingCartImage}
             alt="carritoMarron"

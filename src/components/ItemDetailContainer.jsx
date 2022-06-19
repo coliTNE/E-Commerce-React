@@ -6,11 +6,7 @@ import { UsePromiseFind } from "./Helpers/Data/UsePromiseFind";
 export default function ItemDetailContainer() {
   const { id } = useParams();
 
-  console.log( "params" + id)
-
-  const { data } = UsePromiseFind(Shoes,id);
-
-  console.log("data" + data);
+  const { data } = UsePromiseFind(Shoes, id);
 
   return (
     <div className="main__container">

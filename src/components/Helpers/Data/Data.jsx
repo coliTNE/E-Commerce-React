@@ -71,6 +71,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-asics-patriot-12-noosa-negra-13001011b264002-1.jpg",
       },
     ],
+    stock: 23,
     details: [
       {
         id: 1,
@@ -184,6 +185,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-asics-gel-nimbus-24-gris-13001011b359001-1.jpg",
       },
     ],
+    stock: 15,
     details: [
       {
         id: 1,
@@ -304,6 +306,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-adidas-galaxy-5-negra-100010h04597001-1.jpg",
       },
     ],
+    stock: 41,
     details: [
       {
         id: 1,
@@ -405,6 +408,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-sb-blzr-court-negra-1-510010cv1658002-1.jpg",
       },
     ],
+    stock: 19,
     details: [
       {
         id: 1,
@@ -499,6 +503,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatilla-adidas-grand-court-base-mujer-blanca-57580777-100010eg4055001-1.jpg",
       },
     ],
+    stock: 15,
     details: [
       {
         id: 1,
@@ -605,6 +610,7 @@ const Shoes = [
         size: 44,
       },
     ],
+    stock: 30,
     details: [
       {
         id: 1,
@@ -698,6 +704,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/3cb7d75bc2a65211451e92c5381048e9/z/a/zapatillas-running-asics-patriot-12-noosa-gris-13001011b264021-1.jpg",
       },
     ],
+    stock: 22,
     details: [
       {
         id: 1,
@@ -802,6 +809,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-adidas-galaxy-5-negra-100010h04597001-1.jpg",
       },
     ],
+    stock: 29,
     details: [
       {
         id: 1,
@@ -920,6 +928,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/1/0/100010fw5705001-1.jpg",
       },
     ],
+    stock: 48,
     details: [
       {
         id: 1,
@@ -1037,6 +1046,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-asics-gel-nimbus-24-azul-39551509-13001011b359003-1.jpg",
       },
     ],
+    stock: 9,
     details: [
       {
         id: 1,
@@ -1145,6 +1155,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-sb-charge-suede-azul-510010ct3463401-1.jpg",
       },
     ],
+    stock: 5,
     details: [
       {
         id: 1,
@@ -1234,6 +1245,7 @@ const Shoes = [
           "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatilla-adidas-grand-court-base-blanca-97487218-100010ee7904001-1.jpg",
       },
     ],
+    stock: 26,
     details: [
       {
         id: 1,
@@ -1270,9 +1282,5 @@ const Shoes = [
     ],
   },
 ];
-
-// export default function Data() {
-//   return Shoes;
-// }
 
 export default Shoes
