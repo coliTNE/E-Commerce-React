@@ -9,6 +9,7 @@
   --blueTufts: #5288d0;
   --blueYonder: #4573b0;
   --silver: #c4c2c2;
+  --silverDark: #969696;
   --grayDim: #716a5c;
 }
 
@@ -68,12 +69,11 @@ header {
 }
 
 .nav__li {
-  padding: .5em 1em;
+  padding: 0.5em 1em;
   font-size: 1.2rem;
   text-transform: capitalize;
   transition: all ease 0.4s;
 }
-
 
 .nav__li:hover {
   transform: scale(1.04);
@@ -84,7 +84,7 @@ header {
 }
 
 .nav__li--img {
-  padding: .2em 1.3em 0 1em;
+  padding: 0.2em 1.3em 0 1em;
   position: relative;
   display: flex;
 }
@@ -151,15 +151,14 @@ main {
   padding: 0.5em;
   width: 8em;
   border-radius: 50%;
-  background-color: var(--platinum);
+  background-color: #fff;
   border: 0.1px solid var(--silver);
+  box-shadow: inset #4189e626 0 0 5px 3px;
   transition: all ease-in-out 0.4s;
 }
 
 .filter__imgContainer:hover {
   transform: scale(1.05);
-  background-color: var(--silver);
-  border: 0.1px solid var(--grayDim);
 }
 
 .itemCount {
@@ -225,13 +224,12 @@ main {
   background-color: #fff;
   border: 2px solid var(--platinum);
   cursor: pointer;
-  box-shadow: var(--platinum) 0 0 0;
   transition: all ease 0.4s;
 }
 
 .main__shoeCard:hover {
   border: 2px solid #dfdfdf;
-  box-shadow: #dadada 0 0 3px 2px;
+  box-shadow: #4189e626 0 0 3px 2px;
 }
 
 .shoeCard__imgContainer {
@@ -297,6 +295,10 @@ main {
   min-height: 100vh;
   border: 2px solid var(--platinum);
   border-radius: 5px;
+}
+
+.itemMainDetail {
+  min-height: 700px;
 }
 
 .itemMainDetail,
@@ -458,7 +460,7 @@ main {
   gap: 1em;
   padding: 0.8em 0;
   padding-right: 4em;
-  transition: all ease .4s;
+  transition: all ease 0.4s;
 }
 
 .itemCheckout__link {
