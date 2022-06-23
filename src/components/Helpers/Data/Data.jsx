@@ -8,8 +8,8 @@ const Shoes = [
     brand: "asics",
     title: AsicsLogo,
     type: "Running",
-    description: "ASICS PATRIOT 12 NOOSA GRIS",
-    price: "$13.490",
+    name: "ASICS PATRIOT 12 NOOSA GRIS",
+    price: 13490,
     colors: "Gris/Naranja/Blanco",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/3cb7d75bc2a65211451e92c5381048e9/z/a/zapatillas-running-asics-patriot-12-noosa-gris-13001011b264021-1.jpg",
@@ -112,8 +112,8 @@ const Shoes = [
     brand: "asics",
     title: AsicsLogo,
     type: "Running",
-    description: "ASICS GEL-NIMBUS 24 AZUL",
-    price: "$36.990",
+    name: "ASICS GEL-NIMBUS 24 AZUL",
+    price: 36990,
     colors: "Azul/Negro/Reflectivo",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-asics-gel-nimbus-24-azul-39551509-13001011b359003-1.jpg",
@@ -228,8 +228,8 @@ const Shoes = [
     brand: "adidas",
     title: AdidasLogo,
     type: "Running",
-    description: "ADIDAS GALAXY 5 GRIS",
-    price: "$13.999",
+    name: "ADIDAS GALAXY 5 GRIS",
+    price: 13999,
     colors: "Gris/Negro/Naranja",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-adidas-galaxy-5-gris-69496796-100010h04594001-1.jpg",
@@ -351,8 +351,8 @@ const Shoes = [
     brand: "nike",
     title: NikeLogo,
     type: "Moda",
-    description: "NIKE SB CHARGE SUEDE AZUL",
-    price: "$13.909",
+    name: "NIKE SB CHARGE SUEDE AZUL",
+    price: 13909,
     colors: "Negro/Blanco",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-sb-charge-suede-azul-510010ct3463401-1.jpg",
@@ -451,8 +451,8 @@ const Shoes = [
     brand: "adidas",
     title: AdidasLogo,
     type: "Moda",
-    description: "ADIDAS GRAND COURT BASE BLANCA",
-    price: "$14.999",
+    name: "ADIDAS GRAND COURT BASE BLANCA",
+    price: 14999,
     colors: "Blanco/Negro/Azul",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatilla-adidas-grand-court-base-blanca-97487218-100010ee7904001-1.jpg",
@@ -544,8 +544,8 @@ const Shoes = [
     brand: "asics",
     title: AsicsLogo,
     type: "Running",
-    description: "ASICS TAIKAI ROJA",
-    price: "$11.990",
+    name: "ASICS TAIKAI ROJA",
+    price: 11990,
     colors: "Rojo/Negro/Blanco",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-asics-taikai-roja--13001011b095601-1.jpg",
@@ -657,8 +657,8 @@ const Shoes = [
     brand: "asics",
     title: AsicsLogo,
     type: "Running",
-    description: "ASICS PATRIOT 12 NOOSA NEGRA",
-    price: "$13.490",
+    name: "ASICS PATRIOT 12 NOOSA NEGRA",
+    price: 13490,
     colors: "Negro/Amarillo Fluo/Blanco",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-asics-patriot-12-noosa-negra-13001011b264002-1.jpg",
@@ -745,8 +745,8 @@ const Shoes = [
     brand: "adidas",
     title: AdidasLogo,
     type: "Running",
-    description: "ADIDAS GALAXY 5 AZUL",
-    price: "$13.999",
+    name: "ADIDAS GALAXY 5 AZUL",
+    price: 13999,
     colors: "Azul/Blanco",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/1/0/100010fw5705001-1.jpg",
@@ -854,8 +854,8 @@ const Shoes = [
     brand: "adidas",
     title: AdidasLogo,
     type: "Running",
-    description: "ADIDAS GALAXY 5 NEGRA",
-    price: "$13.999",
+    name: "ADIDAS GALAXY 5 NEGRA",
+    price: 13999,
     colors: "Negro/Verde Fluo",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-adidas-galaxy-5-negra-100010h04597001-1.jpg",
@@ -973,8 +973,8 @@ const Shoes = [
     brand: "asics",
     title: AsicsLogo,
     type: "Running",
-    description: "ASICS GEL-NIMBUS 24 GRIS",
-    price: "$36.990",
+    name: "ASICS GEL-NIMBUS 24 GRIS",
+    price: 36990,
     colors: "Gris/Negro/Blanco/Reflectivo",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-running-asics-gel-nimbus-24-gris-13001011b359001-1.jpg",
@@ -1089,8 +1089,8 @@ const Shoes = [
     brand: "nike",
     title: NikeLogo,
     type: "Moda",
-    description: "NIKE SB BLZR COURT NEGRA",
-    price: "$16.019",
+    name: "NIKE SB BLZR COURT NEGRA",
+    price: 16.019,
     colors: "Negro/Blanco",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-sb-blzr-court-negra-1-510010cv1658002-1.jpg",
@@ -1146,7 +1146,6 @@ const Shoes = [
         id: 3,
         size: 39,
       },
-
     ],
     models: [
       {
@@ -1198,8 +1197,8 @@ const Shoes = [
     brand: "adidas",
     title: AdidasLogo,
     type: "Moda",
-    description: "ADIDAS GRAND COURT BASE BLANCA",
-    price: "$14.999",
+    name: "ADIDAS GRAND COURT BASE BLANCA",
+    price: 14999,
     colors: "Blanco/Rosa",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatilla-adidas-grand-court-base-mujer-blanca-57580777-100010eg4055001-1.jpg",
@@ -1283,4 +1282,4 @@ const Shoes = [
   },
 ];
 
-export default Shoes
+export default Shoes;

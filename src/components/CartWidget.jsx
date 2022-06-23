@@ -1,9 +1,12 @@
 import React from "react";
 import ShoppingCartImage from "../Images/carritovector.png";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { MyContext } from "./CartContext";
 
 export default function CartWidget() {
-  let shoppingCart = 0;
+  const { getItemQty } = useContext(MyContext);
+
   return (
     <div>
       <li className="nav__li nav__li--img">
@@ -13,7 +16,11 @@ export default function CartWidget() {
             alt="carritoMarron"
             className="nav__img"
           />
-          <span className="nav__shoppingCart">{shoppingCart}</span>
+          {getItemQty() > 0 ? (
+            <span className="nav__shoppingCart">{getItemQty()}</span>
+          ) : (
+            <></>
+          )}
         </Link>
       </li>
     </div>

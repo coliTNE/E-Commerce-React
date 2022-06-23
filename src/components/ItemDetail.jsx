@@ -7,25 +7,18 @@ export default function ItemDetail({ itemDescrip }) {
     brand,
     title,
     type,
-    description,
+    name,
     colors,
     price,
     pictureUrl,
     images,
     sizes,
     models,
-    stock,
     details,
     materials,
   } = itemDescrip;
 
   const [bigPicture, setBigPicture] = useState(pictureUrl);
-
-  const [counterLayout, setCounterLayout] = useState(true);
-
-  const onAdd = () => {
-    setCounterLayout(false)
-  }
 
   return (
     <>
@@ -62,8 +55,8 @@ export default function ItemDetail({ itemDescrip }) {
               <div className="itemMainDetail__column itemMainDetail__column--description">
                 <div className="itemMainDetail__mainData">
                   <span className="mainData__type">{type}</span>
-                  <h2 className="mainData__h2">ZAPATILLAS {description}</h2>
-                  <p className="mainData__price">{price}</p>
+                  <h2 className="mainData__h2">ZAPATILLAS {name}</h2>
+                  <p className="mainData__price">{`$ ${price}`}</p>
                   <span className="mainData__colors">{colors}</span>
                 </div>
                 <div className="itemMainDetail__secondaryData">
@@ -97,40 +90,7 @@ export default function ItemDetail({ itemDescrip }) {
                     </>
                   )}
                 </div>
-                {counterLayout ? (
-                  <div className="itemCheckout">
-                    {stock <= 10 ? (
-                      <h3 className="itemMainDetail__h3">
-                        Stock Disponible
-                        <span className="itemCheckout__stock--last">
-                          (Ultimas unidades!)
-                        </span>
-                      </h3>
-                    ) : (
-                      <h3 className="itemMainDetail__h3">Stock Disponible</h3>
-                    )}
-                    <div className="itemCheckout__stockCounter">
-                      <p className="itemCheckout__p">
-                        Cantidad: <span className="itemCheckout__span"></span>
-                      </p>
-                      <ItemCount stock={stock} initial={1} />
-                      <p className="itemCheckout__p itemCheckout__stock">{`(${stock} disponibles)`}</p>
-                    </div>
-                    <div className="itemCheckout__buttons">
-                        <button className="itemCheckout__grayButton" onClick={onAdd}>
-                          Agregar al carrito
-                        </button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="itemCheckout__buttons">
-                    <Link to="/cart" className="itemCheckout__link">
-                      <button className="itemCheckout__blueButton">
-                        Comprar ahora
-                      </button>
-                    </Link>
-                  </div>
-                )}
+                <ItemCount itemDescrip={itemDescrip} initial={1} />
               </div>
             </div>
             <div className="itemAdditionalDetail">
