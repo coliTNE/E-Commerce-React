@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ItemCount from "./ItemCount";
 
 export default function ItemDetail({ itemDescrip }) {
@@ -19,6 +19,10 @@ export default function ItemDetail({ itemDescrip }) {
   } = itemDescrip;
 
   const [bigPicture, setBigPicture] = useState(pictureUrl);
+  const navigate = useNavigate();
+  const redirect = (id) => {
+    navigate(`/item/${id}`);
+  };
 
   return (
     <>
@@ -73,18 +77,15 @@ export default function ItemDetail({ itemDescrip }) {
                       <h3 className="itemMainDetail__h3">Modelos:</h3>
                       <div className="secondaryData__models">
                         {models?.map((item) => (
-                          <Link
-                            reloadDocument
-                            to={`/item/${item.id}`}
+                          <img
                             key={item.id}
-                          >
-                            <img
-                              key={item.id}
-                              src={item.pictureUrl}
-                              alt={`${brand} shoe ${item.id}`}
-                              className="secondaryData__model"
-                            />
-                          </Link>
+                            src={item.pictureUrl}
+                            alt={`${brand} shoe ${item.id}`}
+                            className="secondaryData__model"
+                            onClick={() => {
+                              redirect(item.id);
+                            }}
+                          />
                         ))}
                       </div>
                     </>

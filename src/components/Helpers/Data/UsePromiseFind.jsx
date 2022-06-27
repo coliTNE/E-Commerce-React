@@ -7,15 +7,14 @@ export const UsePromiseFind = (array, id) => {
   useEffect(() => {
     const shoesList = new Promise((res, rej) => {
       setTimeout(() => {
-        const filtredArray = array.find(item => item.id == id)
+        const filtredArray = array.find((item) => item.id == id);
         res(filtredArray);
       }, 2);
     });
     shoesList.then((res) => {
-
       setData(res);
     });
-  }, [array]);
+  }, [array, id]);
 
   return { data };
 };

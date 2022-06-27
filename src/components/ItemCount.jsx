@@ -20,7 +20,6 @@ export default function ItemCount({ itemDescrip, initial }) {
   const { isInCart, addItem } = useContext(MyContext);
 
   const onAdd = () => {
-    alert(`Se agregaron ${counter} productos`);
     isInCart(id);
     addItem(itemDescrip, counter);
     setCounterLayout(false);
@@ -28,59 +27,65 @@ export default function ItemCount({ itemDescrip, initial }) {
 
   return (
     <div className="itemCheckout">
-      {stock <= 10 ? (
-        <h3 className="itemMainDetail__h3">
-          Stock Disponible
-          <span className="itemCheckout__stock--last">(Ultimas unidades!)</span>
-        </h3>
-      ) : (
-        <h3 className="itemMainDetail__h3">Stock Disponible</h3>
-      )}
-      <div className="itemCheckout__stockCounter">
-        <p className="itemCheckout__p">
-          Cantidad: <span className="itemCheckout__span"></span>
-        </p>
-        <div className="itemCount">
-          <div className="itemCount__Buttons">
-            <button
-              onClick={() => {
-                itemCounter(stock, counter, false);
-              }}
-              className="itemCount__Operator itemCount__Operator--minus"
-            >
-              -
-            </button>
-
-            <p className="itemCount__Counter">
-              {counter > 1 ? (
-                <>{`${counter} unidades`}</>
-              ) : (
-                <>{`${counter} unidad`}</>
-              )}{" "}
+      {counterLayout ? (
+        <>
+          {stock <= 10 ? (
+            <h3 className="itemMainDetail__h3">
+              Stock Disponible
+              <span className="itemCheckout__stock--last">
+                (Ultimas unidades!)
+              </span>
+            </h3>
+          ) : (
+            <h3 className="itemMainDetail__h3">Stock Disponible</h3>
+          )}
+          <div className="itemCheckout__stockCounter">
+            <p className="itemCheckout__p">
+              Cantidad: <span className="itemCheckout__span"></span>
             </p>
-            <button
-              onClick={() => {
-                itemCounter(stock, counter, true);
-              }}
-              className="itemCount__Operator"
-            >
-              +
+            <div className="itemCount">
+              <div className="itemCount__Buttons">
+                <button
+                  onClick={() => {
+                    itemCounter(stock, counter, false);
+                  }}
+                  className="itemCount__Operator itemCount__Operator--minus"
+                >
+                  -
+                </button>
+
+                <p className="itemCount__Counter">
+                  {counter > 1 ? (
+                    <>{`${counter} unidades`}</>
+                  ) : (
+                    <>{`${counter} unidad`}</>
+                  )}{" "}
+                </p>
+                <button
+                  onClick={() => {
+                    itemCounter(stock, counter, true);
+                  }}
+                  className="itemCount__Operator"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+            <p className="itemCheckout__p itemCheckout__stock">{`(${stock} disponibles)`}</p>
+          </div>
+          <div className="itemCheckout__buttons">
+            <button className="itemCheckout__grayButton" onClick={onAdd}>
+              Agregar al carrito
             </button>
           </div>
-        </div>
-        <p className="itemCheckout__p itemCheckout__stock">{`(${stock} disponibles)`}</p>
-      </div>
-      <div className="itemCheckout__buttons">
-        {counterLayout ? (
-          <button className="itemCheckout__grayButton" onClick={onAdd}>
-            Agregar al carrito
-          </button>
-        ) : (
+        </>
+      ) : (
+        <div className="itemCheckout__buttons">
           <Link to="/cart" className="itemCheckout__link">
             <button className="itemCheckout__blueButton">Ir al Carrito</button>
           </Link>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }

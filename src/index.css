@@ -53,6 +53,8 @@ header {
 
 .nav h1 {
   font-size: 1.7rem;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 700;
   letter-spacing: 0.6px;
 }
 
@@ -155,6 +157,7 @@ main {
   border: 0.1px solid var(--silver);
   box-shadow: inset #4189e626 0 0 5px 3px;
   transition: all ease-in-out 0.4s;
+  cursor: pointer;
 }
 
 .filter__imgContainer:hover {
@@ -295,6 +298,7 @@ main {
   min-height: 100vh;
   border: 2px solid var(--platinum);
   border-radius: 5px;
+  padding: 1em 0;
 }
 
 .itemMainDetail {
@@ -502,6 +506,10 @@ main {
   color: var(--grayDim);
 }
 
+.itemAdditionalDetail__column--details {
+  line-height: 1.8;
+}
+
 .itemAdditionalDetail__column--details h3,
 .itemAdditionalDetail__column--materials h3 {
   font-size: 1.3em;
@@ -533,21 +541,29 @@ main {
   background-color: #fff;
   border: 2px solid var(--platinum);
   box-shadow: var(--platinum) 0 0 4px 2px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0 2em;
-  position: relative;
-}
-
-.cart__checkout {
-  width: 75%;
 }
 
 .cart__title {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 2em;
+  color: var(--blackCoffee);
+}
+
+.cart__clear {
+  padding: 1em 1em;
+  border-radius: 15px;
+  background-color: #4189e626;
+  border: none;
+  transition: all ease 0.4s;
+  color: var(--blueYonder);
+  cursor: pointer;
+}
+
+.cart__clear:hover {
+  background-color: #4189e63e;
+  transform: scale(1.04);
 }
 
 .cart__grid {
@@ -555,9 +571,21 @@ main {
   grid-template-columns: 3fr 1fr 1fr 1fr;
 }
 
+.cart__grid h2 {
+  color: var(--blackCoffee);
+}
+
+.cart__grid h2 + .cart__grid h2 {
+  text-align: center;
+}
+
 .cart__container {
   padding: 2em 0;
   border-top: 1px solid var(--platinum);
+}
+
+.cart__center {
+  text-align: center;
 }
 
 .cart__product {
@@ -599,6 +627,7 @@ main {
 
 .cart__back:hover {
   background-color: #4189e63e;
+  transform: scale(1.04);
 }
 
 .cart__back a {
@@ -607,65 +636,75 @@ main {
 }
 
 .cart__payment {
-  background-color: var(--platinum);
-  border-radius: 15px;
-  padding: 2em 3em;
-  color: var(--blackCoffee);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-end;
-  text-transform: uppercase;
+  margin-top: 2em;
+  border-top: var(--platinum) 3px solid;
 }
 
-.cart__paymentCalc {
-  width: 100%;
+.cart__payment--grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  color: var(--blueTufts);
+  grid-template-columns: 4fr 1fr 1fr;
 }
 
-.cart__paymentCalc p {
-  justify-self: flex-end;
-}
-
-.cart__paymentCalc--sub h2,
-.cart__paymentCalc--sub p {
-  font-size: 1.1rem;
-}
-
-.cart__paymentCalc--total h2,
-.cart__paymentCalc--total p {
+.cart__payment h2 {
+  color: var(--blackCoffee);
   font-size: 1.4rem;
 }
 
+.cart__payment p {
+  font-size: 1.1rem;
+}
+
 .cart__paymentButton {
-  margin-top: 1.3em;
-  width: 100%;
+  margin-top: 2em;
+  text-align: end;
+}
+
+.cart__paymentButton button {
   background-color: var(--blueTufts);
   color: var(--whiteCultured);
   border: none;
-  border-radius: 15px;
-  padding: 0.8em 0;
+  border-radius: 10px;
+  padding: 1em 4em;
   cursor: pointer;
   transition: all ease 0.4s;
+  font-weight: 700;
 }
 
-.cart__paymentButton:hover {
-  background-color: var(--blueYonder);
+.cart__paymentButton button:hover {
+  transform: scale(1.04);
 }
 
-.cart__clear {
-  padding: 1em 1em;
-  border-radius: 15px;
-  background-color: #4189e626;
-  border: none;
-  transition: all ease 0.4s;
+.main__emptyCart {
+  min-height: calc(100vh - 86px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.emptyCart {
+  background-color: #fff;
+  padding: 5em 2em;
+  border-radius: 20px;
+  box-shadow: var(--platinum) 0 0 10px 2px;
+}
+
+.emptyCart h1 {
   color: var(--blueYonder);
-  cursor: pointer;
 }
 
-.cart__clear:hover {
-  background-color: #4189e63e;
+.emptyCart__button {
+  margin-top: 1.5em;
+  border: none;
+  padding: 1em 4em;
+  background-color: var(--blueTufts);
+  color: var(--whiteCultured);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease 0.4s;
+  font-weight: 700;
+}
+
+.emptyCart__button:hover {
+  transform: scale(1.04);
 }

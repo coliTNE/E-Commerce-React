@@ -1,12 +1,25 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function CategoryLayout({ categoryOption }) {
-    const { title , id , pictureUrl} = categoryOption;
+  const { title, id, pictureUrl } = categoryOption;
+  const navigate = useNavigate();
+
+  const redirect = (brand) => {
+    navigate(`/category/${brand}`);
+  };
   return (
     <>
       <li className="filter__listItem">
-        <Link reloadDocument to={`/category/${title}`} key={id}><div className="filter__imgContainer"><img src={pictureUrl} alt={`${title} logo`} className="filter__img"/></div></Link>
+        <div className="filter__imgContainer">
+          <img
+            key={id}
+            src={pictureUrl}
+            alt={`${title} logo`}
+            className="filter__img"
+            onClick={() => redirect(title)}
+          />
+        </div>
       </li>
     </>
   );
