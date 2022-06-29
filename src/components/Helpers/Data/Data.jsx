@@ -1090,7 +1090,7 @@ const Shoes = [
     title: NikeLogo,
     type: "Moda",
     name: "NIKE SB BLZR COURT NEGRA",
-    price: 16.019,
+    price: 16019,
     colors: "Negro/Blanco",
     pictureUrl:
       "https://cdn.solodeportes.com.ar/media/catalog/product/cache/7c4f9b393f0b8cb75f2b74fe5e9e52aa/z/a/zapatillas-nike-sb-blzr-court-negra-1-510010cv1658002-1.jpg",

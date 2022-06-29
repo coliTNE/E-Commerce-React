@@ -1,20 +1,17 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import { useEffect, useState } from "react";
 
-export const UsePromiseFind = (array, id) => {
+export const UsePromiseFind = (id) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const shoesList = new Promise((res, rej) => {
-      setTimeout(() => {
-        const filtredArray = array.find((item) => item.id == id);
-        res(filtredArray);
-      }, 2);
+    const db = getFirestore();
+    const productRef = doc(db, "products", id);
+
+    getDoc(productRef).then((res) => {
+      setData({ ...res.data(), id: res.id });
     });
-    shoesList.then((res) => {
-      setData(res);
-    });
-  }, [array, id]);
+  }, [id]);
 
   return { data };
 };

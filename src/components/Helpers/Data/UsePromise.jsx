@@ -1,25 +1,39 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
+import { useEffect, useState } from "react";
 
-export const UsePromise = (array, brand) => {
+export const UsePromise = (brand) => {
   const [data, setData] = useState([]);
 
-  //  CREAR SWITCH CASE PARA FILTRAR DE CUALQUIER FORMA POSIBLE
-
   useEffect(() => {
-    const shoesList = new Promise((res, rej) => {
-      setTimeout(() => {
-        if (brand) {
-          res(array.filter((item) => item.brand == brand));
-        } else {
-          res(array);
-        }
-      }, 2);
-    });
-    shoesList.then((res) => {
-      setData(res);
-    });
-  }, [array, brand]);
+    const db = getFirestore();
+    const shoesCollection = collection(db, "products");
 
+    if (brand) {
+      const q = query(shoesCollection, where("brand", "==", brand));
+      getDocs(q).then((res) => {
+        setData(
+          res.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }))
+        );
+      });
+    } else {
+      getDocs(shoesCollection).then((res) => {
+        setData(
+          res.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }))
+        );
+      });
+    }
+  }, [brand]);
   return { data };
 };

@@ -1,5 +1,4 @@
 import CartWidget from "./CartWidget";
-import CategoryContainer from "./Helpers/Category/CategoryContainer";
 import NavStringsContainer from "./Helpers/NavStrings/NavStringsContainer";
 
 function NavBar() {
