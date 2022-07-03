@@ -529,6 +529,12 @@ main {
   box-shadow: var(--platinum) 0 0 4px 2px;
 }
 
+.cart h1,
+.cart h2,
+.cart h3 {
+  color: var(--blackCoffee);
+}
+
 .cart__title {
   display: flex;
   justify-content: space-between;
@@ -555,10 +561,6 @@ main {
 .cart__grid {
   display: grid;
   grid-template-columns: 3fr 1fr 1fr 1fr;
-}
-
-.cart__grid h2 {
-  color: var(--blackCoffee);
 }
 
 .cart__grid h2 + .cart__grid h2 {
@@ -588,7 +590,6 @@ main {
 
 .cart__item h2 {
   font-size: 1.2rem;
-  color: var(--blackCoffee);
 }
 
 .cart__item button {
@@ -603,15 +604,19 @@ main {
   color: var(--blueYonder);
 }
 
-.cart__back {
+.cart__back,
+.cart__checkoutBack {
   padding: 1em 1em;
   border-radius: 15px;
   background-color: #4189e626;
+  color: var(--blueYonder);
   border: none;
   transition: all ease 0.4s;
+  cursor: pointer;
 }
 
-.cart__back:hover {
+.cart__back:hover,
+.cart__checkoutBack:hover {
   background-color: #4189e63e;
   transform: scale(1.04);
 }
@@ -632,7 +637,6 @@ main {
 }
 
 .cart__payment h2 {
-  color: var(--blackCoffee);
   font-size: 1.4rem;
 }
 
@@ -693,4 +697,101 @@ main {
 
 .emptyCart__button:hover {
   transform: scale(1.04);
+}
+
+.cart__checkout {
+  padding-top: 3em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.cart__inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.cart__inputs input {
+  border: 1px solid var(--silver);
+  font-size: 1rem;
+  height: 3em;
+  padding: 0 1em;
+  width: 100%;
+  max-width: 420px;
+}
+
+.cart__inputs input:focus {
+  outline: none;
+  box-shadow: var(--blueTufts) 0 0 2px 2px;
+}
+
+.cart__purchase {
+  border: var(--platinum) 2px solid;
+  padding: 2em;
+  box-shadow: var(--platinum) 0 0 20px 5px;
+  border-radius: 10px;
+}
+
+.cart__purchaseItem {
+  color: var(--blackCoffee);
+  display: flex;
+  align-items: center;
+  gap: 0 2em;
+  border-top: var(--platinum) 1px solid;
+}
+
+.purchaseItem__detail {
+  display: flex;
+  gap: 0 1em;
+}
+
+.cart__checkoutButton {
+  margin-top: 2em;
+  background-color: var(--blueTufts);
+  color: #fff;
+  border: none;
+  font-size: 1rem;
+  height: 3em;
+  padding: 0 1em;
+  width: 100%;
+  max-width: 200px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all ease 0.4s;
+}
+
+.cart__checkoutButton:hover {
+  transform: scale(1.04);
+}
+
+.main__cartTicketDiv {
+  padding: 4em 0;
+}
+
+.main__cartTicketDiv h2 {
+  padding-bottom: 2em;
+}
+
+.main__cartTicketDiv--data {
+  border-top: var(--silver) 3px solid;
+}
+
+.ticketData {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.ticketData div {
+  border: var(--platinum) 2px solid;
+  padding: 2em;
+  box-shadow: var(--platinum) 0 0 20px 5px;
+  border-radius: 10px;
+}
+
+.ticketData p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  padding: 0.5em 0;
 }
