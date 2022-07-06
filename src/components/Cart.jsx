@@ -89,13 +89,13 @@ export default function Cart() {
                         </button>
                       </div>
                     </div>
-                    <div className="cart__center">{`$ ${item.price.toLocaleString(
+                    <div className="cart__center">{`$ ${item.price?.toLocaleString(
                       "es"
                     )}`}</div>
                     <div className="cart__center">{item.qty}</div>
                     <div className="cart__center">{`$ ${(
                       item.qty * item.price
-                    ).toLocaleString("es")}`}</div>
+                    )?.toLocaleString("es")}`}</div>
                   </div>
                 ))}
                 <button className="cart__back">
@@ -107,13 +107,13 @@ export default function Cart() {
                   <h2>Resumen de compra</h2>
                   <div className="cart__paymentCalc cart__paymentCalc--sub">
                     <h2 className="cart__center">Subtotal</h2>
-                    <p className="cart__center">{`$ ${getItemPrice().toLocaleString(
+                    <p className="cart__center">{`$ ${getItemPrice()?.toLocaleString(
                       "es"
                     )}`}</p>
                   </div>
                   <div className="cart__paymentCalc cart__paymentCalc--total">
                     <h2 className="cart__center">Total</h2>
-                    <p className="cart__center">{`$ ${getItemPrice().toLocaleString(
+                    <p className="cart__center">{`$ ${getItemPrice()?.toLocaleString(
                       "es"
                     )}`}</p>
                   </div>
@@ -141,9 +141,17 @@ export default function Cart() {
       {step === 2 && (
         <main className="main__cart">
           <div className="cart">
+            <div className="cart__header">
+              <h1>Datos para el Envío</h1>
+              <button
+                className="cart__checkoutBack"
+                onClick={() => stepCall(1)}
+              >
+                Volver al carrito
+              </button>
+            </div>
             <div className="cart__checkout">
               <div className="cart__inputs">
-                <h1>Datos para el Envío</h1>
                 <input
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ingrese su Nombre"
@@ -173,16 +181,13 @@ export default function Cart() {
                       <h4>{item.name}</h4>
                       <div className="purchaseItem__detail">
                         <p>{`${item.qty} unidades`}</p>
-                        <p>{`$ ${item.price.toLocaleString("es")} c/u`}</p>
+                        <p>{`$ ${item.price?.toLocaleString("es")} c/u`}</p>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
-            <button className="cart__checkoutBack" onClick={() => stepCall(1)}>
-              Volver al carrito
-            </button>
           </div>
         </main>
       )}

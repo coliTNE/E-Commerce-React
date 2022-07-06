@@ -699,6 +699,12 @@ main {
   transform: scale(1.04);
 }
 
+.cart__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .cart__checkout {
   padding-top: 3em;
   display: flex;
@@ -730,7 +736,6 @@ main {
   border: var(--platinum) 2px solid;
   padding: 2em;
   box-shadow: var(--platinum) 0 0 20px 5px;
-  border-radius: 10px;
 }
 
 .cart__purchaseItem {
@@ -794,4 +799,17 @@ main {
   font-size: 1.1rem;
   font-weight: 500;
   padding: 0.5em 0;
+}
+
+/* SweetAlert Styles */
+
+body.swal2-shown > [aria-hidden="true"] {
+  transition: 0.1s filter;
+  filter: blur(5px);
+}
+
+.swalButton {
+  width: 100%;
+  border: none !important;
+  box-shadow: none !important;
 }
