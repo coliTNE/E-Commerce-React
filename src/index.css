@@ -81,14 +81,13 @@ header {
   color: #fff;
 }
 
-.nav__img {
-  width: 50px;
+.nav__li--icon {
+  padding: 0.4em 1.3em 0 1em;
+  position: relative;
 }
 
-.nav__li--img {
-  padding: 0.2em 1.3em 0 1em;
-  position: relative;
-  display: flex;
+.nav__icon {
+  font-size: 1.4rem;
 }
 
 .nav__shoppingCart {
@@ -107,8 +106,6 @@ header {
   color: #fff;
   border-radius: 25px;
   font-weight: 700;
-  line-height: 1.1;
-  z-index: 1;
 }
 
 main {
@@ -405,6 +402,18 @@ main {
   cursor: pointer;
 }
 
+.secondaryData__sizesItem--active {
+  background-color: var(--blueTufts);
+  color: #fff;
+  text-align: center;
+  font-size: 13px;
+  width: 44px;
+  height: 44px;
+  border: var(--blueYonder) solid 1px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
 .secondaryData__sizesItem:hover {
   color: var(--blueTufts);
   border: var(--grayDim) solid 1px;
@@ -427,12 +436,12 @@ main {
 
 .itemCheckout__p {
   color: var(--grayDim);
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 
 .itemCheckout__stock {
   color: var(--grayDim);
-  font-size: 1.1em;
+  font-size: 1.1rem;
 }
 
 .itemCheckout__stock--last {
@@ -440,51 +449,54 @@ main {
   font-weight: 500;
   margin: 0;
   padding-left: 0.5em;
-  font-size: 1.1em;
+  font-size: 1.1rem;
   color: var(--redRyb);
 }
 
-.itemCheckout__buttons {
-  display: flex;
-  align-items: center;
-  gap: 1em;
-  padding: 0.8em 0;
-  padding-right: 4em;
-}
-
-.itemCheckout__link {
-  width: 100%;
-}
-
-.itemCheckout__buttons button {
-  width: 100%;
-  font-size: 1.2em;
-  padding: 0.6em 0;
-  cursor: pointer;
-  border-radius: 8px;
-  border: none;
-  font-weight: 700;
-  transition: all ease 0.4s;
-}
-
-.itemCheckout__blueButton {
+.itemCheckout__button {
   margin-top: 2em;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  height: 44px;
+  border: none;
   background-color: var(--blueTufts);
   color: var(--whiteCultured);
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease all;
+  cursor: pointer;
+  box-shadow: rgba(82, 136, 208, 0.5) 0 0 30px;
+  transition: 0.4s ease-in-out;
 }
 
-.itemCheckout__blueButton:hover {
-  background-color: var(--blueYonder);
+.itemCheckout__button::after {
+  position: absolute;
+  top: 0;
+  left: calc(-100% - 80px);
+  content: "";
+  width: 100%;
+  border-bottom: 80px solid var(--greenWinter);
+  border-right: 80px solid transparent;
+  z-index: 1;
+  transition: 0.4s ease-in-out;
 }
 
-.itemCheckout__grayButton {
-  margin-top: 2em;
-  color: var(--blueTufts);
-  background-color: #4189e626;
+.itemCheckout__button:hover {
+  box-shadow: rgba(83, 145, 126, 0.5) 0 0 30px;
 }
 
-.itemCheckout__grayButton:hover {
-  background-color: #4189e63e;
+.itemCheckout__button:hover::after {
+  left: 0;
+}
+
+.itemCheckout__button span {
+  position: relative;
+  z-index: 2;
 }
 
 .itemAdditionalDetail__column {
@@ -595,6 +607,7 @@ main {
 .cart__item button {
   color: var(--blueTufts);
   background-color: #fff;
+  padding: 0;
   cursor: pointer;
   border: none;
   font-size: 0.9rem;
@@ -732,25 +745,6 @@ main {
   box-shadow: var(--blueTufts) 0 0 2px 2px;
 }
 
-.cart__purchase {
-  border: var(--platinum) 2px solid;
-  padding: 2em;
-  box-shadow: var(--platinum) 0 0 20px 5px;
-}
-
-.cart__purchaseItem {
-  color: var(--blackCoffee);
-  display: flex;
-  align-items: center;
-  gap: 0 2em;
-  border-top: var(--platinum) 1px solid;
-}
-
-.purchaseItem__detail {
-  display: flex;
-  gap: 0 1em;
-}
-
 .cart__checkoutButton {
   margin-top: 2em;
   background-color: var(--blueTufts);
@@ -782,6 +776,108 @@ main {
   border-top: var(--silver) 3px solid;
 }
 
+.cart__form {
+  width: 30%;
+}
+
+.form__label {
+  display: block;
+  font-weight: 700;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.form__inputContainer {
+  position: relative;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.form__inputContainer input {
+  width: 100%;
+  background-color: var(--whiteCultured) !important;
+  border: 3px solid var(--platinum);
+  border-radius: 5px;
+  height: 45px;
+  line-height: 45px;
+
+  transition: all ease 0.4s;
+}
+
+.form__inputContainer input:focus {
+  border: 3px solid var(--blueTufts);
+  outline: none;
+  box-shadow: 3px 0 30px var(--platinum);
+}
+
+.form__errorInput {
+  border: 3px solid var(--roseDogwood) !important;
+}
+
+.form__icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  font-size: 1.4rem;
+}
+
+.form__errorIcon {
+  color: var(--roseDogwood);
+}
+
+.form__successIcon {
+  color: var(--greenWinter);
+}
+
+.form__errorMessage {
+  color: var(--roseDogwood);
+  font-size: 0.8rem;
+}
+
+.form__btn {
+  margin: 1rem;
+  font-size: 1rem;
+  width: 60%;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 5px;
+  border: none;
+  background-color: var(--greenWinter);
+  color: #fff;
+  position: relative;
+  cursor: pointer;
+}
+
+.form__btn--iconCtn {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 2;
+  left: -40px;
+
+  transition: 0.3s ease-in-out left, 0.3s ease-in-out opacity 0.1s;
+}
+
+.form__btn span {
+  transition: all ease-in-out 0.4s;
+  position: absolute;
+  left: 35%;
+  top: 0;
+}
+
+.form__btn:hover span {
+  left: 15px;
+}
+
+.form__btn:hover .form__btn--iconCtn {
+  left: calc(100% - 30px);
+  opacity: 1;
+}
+
 .ticketData {
   display: flex;
   justify-content: space-between;
@@ -791,7 +887,7 @@ main {
 .ticketData div {
   border: var(--platinum) 2px solid;
   padding: 2em;
-  box-shadow: var(--platinum) 0 0 20px 5px;
+  box-shadow: var(--platinum) 0 0 30px;
   border-radius: 10px;
 }
 
@@ -801,7 +897,29 @@ main {
   padding: 0.5em 0;
 }
 
-/* SweetAlert Styles */
+.cart__purchase {
+  width: 30%;
+  border: var(--platinum) 2px solid;
+  padding: 2em;
+}
+
+.cart__purchaseItem {
+  color: var(--blackCoffee);
+  display: flex;
+  align-items: center;
+  gap: 0 2em;
+}
+
+.cart__purchaseItem + .cart__purchaseItem {
+  border-top: var(--platinum) 1px solid;
+}
+
+.purchaseItem__detail {
+  display: flex;
+  gap: 0 1em;
+}
+
+/* SweetAlert and FontAwesome Styles */
 
 body.swal2-shown > [aria-hidden="true"] {
   transition: 0.1s filter;

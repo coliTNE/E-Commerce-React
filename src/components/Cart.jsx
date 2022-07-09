@@ -9,37 +9,36 @@ import {
   doc,
   getDoc,
 } from "firebase/firestore";
+import Ticket from "./Helpers/CartSteps/Ticket";
+import Form from "./Helpers/CartSteps/Form";
 
 export default function Cart() {
   const { cart, deleteItem, emptyCart, getItemPrice } = useContext(MyContext);
   const [step, setStep] = useState(1);
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [cel, setCel] = useState("");
   const [ticket, setTicket] = useState([]);
 
   const db = getFirestore();
   const orderCollection = collection(db, "orders");
 
+  console.log(cart);
+
   const stepCall = (num) => {
     setStep(num);
   };
 
-  const createOrder = () => {
-    if (name !== "" && email !== "" && cel !== "") {
-      const order = {
-        buyer: { name, email, cel },
-        items: cart,
-        total: getItemPrice(),
-        date: serverTimestamp(),
-      };
-      addDoc(orderCollection, order).then(({ id }) => {
-        createTicket(id);
-      });
-      stepCall(3);
-    } else {
-      alert("completa todos los datos");
-    }
+  const createOrder = (formValues) => {
+    const { name, email, mobile } = formValues;
+    const order = {
+      buyer: { name, email, mobile },
+      items: cart,
+      total: getItemPrice(),
+      date: serverTimestamp(),
+    };
+    addDoc(orderCollection, order).then(({ id }) => {
+      createTicket(id);
+    });
+    emptyCart();
+    stepCall(3);
   };
 
   const createTicket = (id) => {
@@ -80,6 +79,7 @@ export default function Cart() {
                       </div>
                       <div className="cart__item">
                         <h2>{item.name}</h2>
+                        <p>Talle: {item.sizes}</p>
                         <button
                           onClick={() => {
                             deleteItem(item.id);
@@ -151,92 +151,12 @@ export default function Cart() {
               </button>
             </div>
             <div className="cart__checkout">
-              <div className="cart__inputs">
-                <input
-                  onChange={(e) => setName(e.target.value)}
-                  placeholder="Ingrese su Nombre"
-                />
-                <input
-                  onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Ingrese su Email"
-                />
-                <input
-                  onChange={(e) => setCel(e.target.value)}
-                  placeholder="Ingrese su numero de celular"
-                />
-                <button className="cart__checkoutButton" onClick={createOrder}>
-                  Comprar
-                </button>
-              </div>
-              <div className="cart__purchase">
-                <h2>Resumen de Compra</h2>
-                {cart?.map((item) => (
-                  <div className="cart__purchaseItem" key={item.id}>
-                    <img
-                      src={item.pictureUrl}
-                      alt={`Zapatilla ${item.brand}`}
-                      className="cart__img"
-                    />
-                    <div>
-                      <h4>{item.name}</h4>
-                      <div className="purchaseItem__detail">
-                        <p>{`${item.qty} unidades`}</p>
-                        <p>{`$ ${item.price?.toLocaleString("es")} c/u`}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <Form createOrder={createOrder} />
             </div>
           </div>
         </main>
       )}
-      {step === 3 && (
-        <main className="main__cart">
-          <div className="cart">
-            <h1>Gracias por comprar en E-colimmerce, {ticket.buyer?.name} !</h1>
-            <div className="main__cartTicket">
-              <div className="main__cartTicketDiv">
-                <h2>Productos comprados</h2>
-                {ticket.items?.map((item) => (
-                  <div className="cart__purchaseItem" key={item.id}>
-                    <img
-                      src={item.pictureUrl}
-                      alt={`Zapatilla ${item.brand}`}
-                      className="cart__img"
-                    />
-                    <div>
-                      <h4>{item.name}</h4>
-                      <div className="purchaseItem__detail">
-                        <p>{`${item.qty} unidades`}</p>
-                        <p>{`$ ${item.price?.toLocaleString("es")} c/u`}</p>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-                <h3>
-                  Total de tu compra: ${ticket.total?.toLocaleString("es")}
-                </h3>
-              </div>
-              <div className="main__cartTicketDiv main__cartTicketDiv--data">
-                <h2>Datos de tu compra</h2>
-                <div className="ticketData">
-                  <div>
-                    <p>Tu codigo de compra: {ticket.id}</p>
-                    <p>Email: {ticket.buyer?.email}</p>
-                    <p>Celular: {ticket.buyer?.cel}</p>
-                  </div>
-                  <Link to="/inicio">
-                    <button className="emptyCart__button">
-                      Volver al inicio
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-      )}
+      {step === 3 && <Ticket ticket={ticket} />}
     </>
   );
 }

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { MyContext } from "./CartContext";
 
-export default function ItemCount({ itemDescrip, initial }) {
+export default function ItemCount({ itemDescrip, initial, productSize }) {
   const { stock, id } = itemDescrip;
   const [counter, setCounter] = useState(initial);
   const navigate = useNavigate();
@@ -21,30 +20,41 @@ export default function ItemCount({ itemDescrip, initial }) {
   const { isInCart, addItem } = useContext(MyContext);
 
   const onAdd = () => {
-    isInCart(id);
-    addItem(itemDescrip, counter);
-    Swal.fire({
-      title: "Añadiste el producto al carrito",
-      icon: "success",
-      showDenyButton: true,
-      showConfirmButton: true,
-      confirmButtonText: "VER CARRITO",
-      denyButtonText: "SEGUIR COMPRANDO",
-      confirmButtonColor: "#53917e",
-      denyButtonColor: "#5288d0",
-      padding: "3rem 3rem",
-      allowOutsideClick: false,
-      customClass: {
-        confirmButton: "swalButton swalButton--confirm",
-        denyButton: "swalButton swalButton--deny",
-      },
-    }).then((result) => {
-      if (result.isConfirmed) {
-        navigate("/cart");
-      } else if (result.isDenied) {
-        navigate("/inicio");
-      }
-    });
+    if (productSize) {
+      isInCart(id);
+      addItem(itemDescrip, counter, productSize);
+      Swal.fire({
+        title: "Añadiste el producto al carrito",
+        icon: "success",
+        showDenyButton: true,
+        showConfirmButton: true,
+        confirmButtonText: "VER CARRITO",
+        denyButtonText: "SEGUIR COMPRANDO",
+        confirmButtonColor: "#53917e",
+        denyButtonColor: "#5288d0",
+        padding: "3rem 3rem",
+        allowOutsideClick: false,
+        customClass: {
+          confirmButton: "swalButton swalButton--confirm",
+          denyButton: "swalButton swalButton--deny",
+        },
+      }).then((result) => {
+        if (result.isConfirmed) {
+          navigate("/cart");
+        } else if (result.isDenied) {
+          navigate("/inicio");
+        }
+      });
+    } else {
+      Swal.fire({
+        title: "Por favor, elija una talla.",
+        toast: true,
+        timer: 2000,
+        timerProgressBar: true,
+        position: "top",
+        showConfirmButton: false,
+      });
+    }
   };
 
   return (
@@ -91,11 +101,9 @@ export default function ItemCount({ itemDescrip, initial }) {
         </div>
         <p className="itemCheckout__p itemCheckout__stock">{`(${stock} disponibles)`}</p>
       </div>
-      <div className="itemCheckout__buttons">
-        <button className="itemCheckout__grayButton" onClick={onAdd}>
-          Agregar al carrito
-        </button>
-      </div>
+      <button className="itemCheckout__button" onClick={onAdd}>
+        <span>Agregar al carrito</span>
+      </button>
     </div>
   );
 }

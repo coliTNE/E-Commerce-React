@@ -10,10 +10,11 @@ export default function CartContext({ children }) {
   const isInCart = (id) => {
     return cart.some((item) => item.id === id);
   };
-  const addItem = (item, qty) => {
+  const addItem = (item, qty, size) => {
     const newItem = {
       ...item,
       qty,
+      sizes: size,
     };
     if (isInCart(newItem.id)) {
       const findProduct = cart.find((item) => item.id === newItem.id);

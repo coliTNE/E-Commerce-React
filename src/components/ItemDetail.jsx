@@ -16,6 +16,7 @@ export default function ItemDetail({ itemDescrip }) {
   } = itemDescrip;
 
   const [bigPicture, setBigPicture] = useState(pictureUrl);
+  const [productSize, setProductSize] = useState();
 
   return (
     <>
@@ -57,13 +58,25 @@ export default function ItemDetail({ itemDescrip }) {
                   <h3 className="itemMainDetail__h3">Talle Arg:</h3>
                   <ul className="secondaryData__sizesList">
                     {sizes?.map((item) => (
-                      <li key={item.id} className="secondaryData__sizesItem">
+                      <li
+                        key={item.id}
+                        onClick={() => setProductSize(item.size)}
+                        className={`${
+                          productSize === item.size
+                            ? "secondaryData__sizesItem--active"
+                            : "secondaryData__sizesItem"
+                        }`}
+                      >
                         <p>{item.size}</p>
                       </li>
                     ))}
                   </ul>
                 </div>
-                <ItemCount itemDescrip={itemDescrip} initial={1} />
+                <ItemCount
+                  itemDescrip={itemDescrip}
+                  initial={1}
+                  productSize={productSize}
+                />
               </div>
             </div>
             <div className="itemAdditionalDetail">

@@ -1,21 +1,18 @@
 import React from "react";
-import ShoppingCartImage from "../Images/carritovector.png";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { MyContext } from "./CartContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function CartWidget() {
   const { getItemQty } = useContext(MyContext);
 
   return (
     <div>
-      <li className="nav__li nav__li--img">
+      <li className="nav__li nav__li--icon">
         <Link to="/cart">
-          <img
-            src={ShoppingCartImage}
-            alt="carritoMarron"
-            className="nav__img"
-          />
+          <FontAwesomeIcon icon={faCartShopping} className="nav__icon" />
           {getItemQty() > 0 ? (
             <span className="nav__shoppingCart">{getItemQty()}</span>
           ) : (
