@@ -5,8 +5,10 @@ export default function NavStringsLayout({ navBarOption }) {
   const { title } = navBarOption;
   return (
     <>
-      <li className="nav__li">
-        <Link to={`${title}`}>{title}</Link>
+      <li className="nav__item">
+        <Link className="nav__link" to={`${title}`}>
+          {title}
+        </Link>
       </li>
     </>
   );

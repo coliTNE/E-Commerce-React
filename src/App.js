@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import NavBar from "./components/NavBar";
 import { initializeApp } from "firebase/app";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   initializeApp({
@@ -19,7 +20,7 @@ function App() {
   return (
     <BrowserRouter>
       <CartContext>
-        <NavBar />
+        <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/inicio" element={<Home />} />

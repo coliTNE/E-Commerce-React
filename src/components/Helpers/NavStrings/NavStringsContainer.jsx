@@ -18,7 +18,9 @@ export default function NavStringsContainer() {
   ];
   return (
     <>
-      {navBarOptions?.map(navBarOption => <NavStringsLayout key={navBarOption.id} navBarOption={navBarOption}/>)}
+      {navBarOptions?.map((navBarOption) => (
+        <NavStringsLayout key={navBarOption.id} navBarOption={navBarOption} />
+      ))}
     </>
   );
 }

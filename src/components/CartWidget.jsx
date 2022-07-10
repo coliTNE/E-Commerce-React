@@ -10,16 +10,14 @@ export default function CartWidget() {
 
   return (
     <div>
-      <li className="nav__li nav__li--icon">
-        <Link to="/cart">
-          <FontAwesomeIcon icon={faCartShopping} className="nav__icon" />
-          {getItemQty() > 0 ? (
-            <span className="nav__shoppingCart">{getItemQty()}</span>
-          ) : (
-            <></>
-          )}
-        </Link>
-      </li>
+      <Link to="/cart">
+        <FontAwesomeIcon icon={faCartShopping} className="nav__icon" />
+        {getItemQty() > 0 ? (
+          <span className="nav__shoppingCart">{getItemQty()}</span>
+        ) : (
+          <></>
+        )}
+      </Link>
     </div>
   );
 }

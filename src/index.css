@@ -15,6 +15,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 14px;
 }
 
 body {
@@ -31,63 +32,57 @@ img {
   max-width: 100%;
 }
 
-header {
-  width: 100%;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: var(--blueTufts);
-  border-bottom: solid 1px var(--blueYonder);
-  z-index: 999;
-}
-
-.nav {
-  max-width: 1400px;
+.container {
   width: 100%;
   margin: 0 auto;
-  display: flex;
-  color: var(--whiteCultured);
-  justify-content: space-between;
-  align-items: center;
 }
 
-.nav h1 {
-  font-size: 1.7rem;
-  font-family: "Titillium Web", sans-serif;
-  font-weight: 700;
-  letter-spacing: 0.6px;
-}
+/* SideBar Css */
 
-.nav__ul {
-  display: flex;
-  position: relative;
-  list-style: none;
-  align-items: center;
-}
-
-.nav__ul a {
-  text-decoration: none;
-  color: var(--platinum);
-}
-
-.nav__li {
-  padding: 0.5em 1em;
-  font-size: 1.2rem;
-  text-transform: capitalize;
-  transition: all ease 0.4s;
-}
-
-.nav__li:hover a {
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #151719;
   color: #fff;
+  padding: 0 2em;
 }
 
-.nav__li--icon {
-  padding: 0.4em 1.3em 0 1em;
-  position: relative;
-}
-
-.nav__icon {
+.sidebar__list {
+  padding: 0;
+  list-style: none;
   font-size: 1.4rem;
+}
+
+.sidebar__item {
+  display: flex;
+}
+
+.sidebar__item--grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebar a p {
+  display: none;
+}
+
+.sidebar--active a p {
+  display: block;
+}
+
+/* Nav Css */
+
+header {
+  background: var(--blueTufts);
+  color: var(--whiteCultured);
+}
+
+main {
+  margin-top: 100vh;
 }
 
 .nav__shoppingCart {
@@ -108,7 +103,12 @@ header {
   font-weight: 700;
 }
 
-main {
+/* Main Css */
+
+.main__container {
+  margin: 0 auto;
+}
+/* main {
   margin-top: 86px;
 }
 
@@ -917,11 +917,11 @@ main {
 .purchaseItem__detail {
   display: flex;
   gap: 0 1em;
-}
+} */
 
 /* SweetAlert and FontAwesome Styles */
 
-body.swal2-shown > [aria-hidden="true"] {
+/* body.swal2-shown > [aria-hidden="true"] {
   transition: 0.1s filter;
   filter: blur(5px);
 }
@@ -930,4 +930,4 @@ body.swal2-shown > [aria-hidden="true"] {
   width: 100%;
   border: none !important;
   box-shadow: none !important;
-}
+} */

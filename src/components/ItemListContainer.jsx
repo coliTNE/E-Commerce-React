@@ -9,8 +9,9 @@ export default function ItemListContainer() {
 
   return (
     <main>
-      <div className="banner__container">
+      <div className="main__container">
         <img
+          className="main__banner"
           src="https://www.paris.cl/on/demandware.static/-/Sites/es_CL/dw0c086768/marketing/imagenes/zapatillas/banner_zapatillas_larga-vida_mar22.jpg"
           alt="zapatillas banner"
         />
