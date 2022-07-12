@@ -54,7 +54,7 @@ export default function Form({ createOrder }) {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="cart__form">
+    <form onSubmit={handleSubmit}>
       <label htmlFor="name" className="form__label">
         Nombre
         <div className="form__inputContainer">

@@ -3,6 +3,8 @@ import ItemListContainer from "./ItemListContainer";
 
 export default function Category() {
   return (
-    <ItemListContainer />
+    <main>
+      <ItemListContainer />
+    </main>
   );
 }

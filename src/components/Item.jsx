@@ -4,23 +4,23 @@ export default function Item({ product }) {
   const { brand, type, name, price, pictureUrl, secondPictureUrl } = product;
 
   return (
-    <div className="main__shoeCard">
-      <div className="shoeCard__imgContainer">
+    <div className="shoeCards__card">
+      <div>
         <img
           src={pictureUrl}
           alt={`zapatilla deportiva ${brand}`}
-          className="shoeCard__img"
+          className="card__img"
         />
         <img
           src={secondPictureUrl}
           alt={`zapatilla deportiva ${brand}`}
-          className="shoeCard__secondaryImg"
+          className="card__secondaryImg"
         />
       </div>
-      <div className="shoeCard__dataContainer">
-        <span className="shoeCard__type">{type}</span>
-        <p className="shoeCard__descrip">{name}</p>
-        <h3 className="shoeCard__price">{`$${price?.toLocaleString("es")}`}</h3>
+      <div className="card__dataContainer">
+        <span>{type}</span>
+        <p>{name}</p>
+        <h3>{`$${price?.toLocaleString("es")}`}</h3>
       </div>
     </div>
   );

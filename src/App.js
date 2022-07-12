@@ -7,6 +7,10 @@ import ItemDetailContainer from "./components/ItemDetailContainer";
 import NavBar from "./components/NavBar";
 import { initializeApp } from "firebase/app";
 import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
+import Loading from "./components/Loading";
+import PageNotFound from "./components/PageNotFound";
+import About from "./components/About";
 
 function App() {
   initializeApp({
@@ -21,14 +25,18 @@ function App() {
     <BrowserRouter>
       <CartContext>
         <Sidebar />
+        <NavBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/inicio" element={<Home />} />
+          <Route path="/category" element={<Category />} />
           <Route path="/category/:brand" element={<Category />} />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/nosotros" element={<About />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
-        <footer />
+        <Footer />
       </CartContext>
     </BrowserRouter>
   );

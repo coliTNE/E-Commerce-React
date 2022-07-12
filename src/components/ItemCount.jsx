@@ -1,3 +1,5 @@
+import { faCircleMinus, faCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
@@ -73,14 +75,13 @@ export default function ItemCount({ itemDescrip, initial, productSize }) {
         </p>
         <div className="itemCount">
           <div className="itemCount__Buttons">
-            <button
+            <FontAwesomeIcon
+              icon={faCircleMinus}
+              className="itemCount__Operator"
               onClick={() => {
                 itemCounter(stock, counter, false);
               }}
-              className="itemCount__Operator itemCount__Operator--minus"
-            >
-              -
-            </button>
+            />
 
             <p className="itemCount__Counter">
               {counter > 1 ? (
@@ -89,21 +90,22 @@ export default function ItemCount({ itemDescrip, initial, productSize }) {
                 <>{`${counter} unidad`}</>
               )}{" "}
             </p>
-            <button
+            <FontAwesomeIcon
+              icon={faCirclePlus}
+              className="itemCount__Operator"
               onClick={() => {
                 itemCounter(stock, counter, true);
               }}
-              className="itemCount__Operator"
-            >
-              +
-            </button>
+            />
           </div>
         </div>
         <p className="itemCheckout__p itemCheckout__stock">{`(${stock} disponibles)`}</p>
       </div>
-      <button className="itemCheckout__button" onClick={onAdd}>
-        <span>Agregar al carrito</span>
-      </button>
+      <div className="itemCheckout__buttonContainer">
+        <button className="itemCheckout__button" onClick={onAdd}>
+          <span>Agregar al carrito</span>
+        </button>
+      </div>
     </div>
   );
 }

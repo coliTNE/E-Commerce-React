@@ -1,25 +1,58 @@
 import ItemList from "./ItemList";
-import { UsePromise } from "./Helpers/Data/UsePromise";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CategoryContainer from "./Helpers/Category/CategoryContainer";
+import Loading from "./Loading";
 
 export default function ItemListContainer() {
   const { brand } = useParams();
-  const { data } = UsePromise(brand);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const db = getFirestore();
+  const shoesCollection = collection(db, "products");
+
+  useEffect(() => {
+    if (brand) {
+      const q = query(shoesCollection, where("brand", "==", brand));
+      getDocs(q).then((res) => {
+        setData(
+          res.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }))
+        );
+        setLoading(true);
+      });
+    } else {
+      getDocs(shoesCollection).then((res) => {
+        setData(
+          res.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+          }))
+        );
+        setLoading(true);
+      });
+    }
+  }, [brand]);
 
   return (
-    <main>
-      <div className="main__container">
-        <img
-          className="main__banner"
-          src="https://www.paris.cl/on/demandware.static/-/Sites/es_CL/dw0c086768/marketing/imagenes/zapatillas/banner_zapatillas_larga-vida_mar22.jpg"
-          alt="zapatillas banner"
-        />
-      </div>
-      <div className="main__container">
-        <CategoryContainer />
-        <ItemList products={data} />
-      </div>
-    </main>
+    <>
+      {loading ? (
+        <div className="container">
+          <CategoryContainer />
+          <ItemList products={data} />
+        </div>
+      ) : (
+        <Loading />
+      )}
+    </>
   );
 }

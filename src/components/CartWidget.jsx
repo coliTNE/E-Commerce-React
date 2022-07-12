@@ -10,7 +10,7 @@ export default function CartWidget() {
 
   return (
     <div>
-      <Link to="/cart">
+      <Link to="/cart" className="nav__cart">
         <FontAwesomeIcon icon={faCartShopping} className="nav__icon" />
         {getItemQty() > 0 ? (
           <span className="nav__shoppingCart">{getItemQty()}</span>
