@@ -3,7 +3,9 @@
 ## Librerias utilizadas
 
 Font Awesome: @fortawesome/react-fontawesome
+
 Font Awesome Free Icons: @fortawesome/free-solid-svg-icons
+
 SweetAlert2: sweetalert2
 
 ### INICIO
