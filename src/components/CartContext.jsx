@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { doc, updateDoc, getFirestore } from "firebase/firestore";
 
 export const MyContext = createContext({});
 

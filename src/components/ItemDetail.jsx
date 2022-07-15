@@ -17,6 +17,7 @@ export default function ItemDetail({ itemDescrip }) {
     sizes,
     details,
     materials,
+    stock,
   } = itemDescrip;
 
   const [bigPicture, setBigPicture] = useState(pictureUrl);
@@ -101,29 +102,39 @@ export default function ItemDetail({ itemDescrip }) {
 
                   <span className="mainData__colors">Colores: {colors}</span>
                 </div>
-                <div className="itemMainDetail__sizesList">
-                  <h3>Talle Arg:</h3>
-                  <ul className="sizesList">
-                    {sizes?.map((item) => (
-                      <li
-                        key={item.id}
-                        onClick={() => setProductSize(item.size)}
-                        className={`${
-                          productSize === item.size
-                            ? "sizesItem sizesItem--active"
-                            : "sizesItem"
-                        }`}
-                      >
-                        <p>{item.size}</p>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                <ItemCount
-                  itemDescrip={itemDescrip}
-                  initial={1}
-                  productSize={productSize}
-                />
+                {stock > 0 ? (
+                  <div className="itemMainDetail__sizesList">
+                    <h3>Talle Arg:</h3>
+                    <ul className="sizesList">
+                      {sizes?.map((item) => (
+                        <li
+                          key={item.id}
+                          onClick={() => setProductSize(item.size)}
+                          className={`${
+                            productSize === item.size
+                              ? "sizesItem sizesItem--active"
+                              : "sizesItem"
+                          }`}
+                        >
+                          <p>{item.size}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : (
+                  ""
+                )}
+                {stock > 0 ? (
+                  <ItemCount
+                    itemDescrip={itemDescrip}
+                    initial={1}
+                    productSize={productSize}
+                  />
+                ) : (
+                  <div className="itemCheckout">
+                    <h3 className="itemMainDetail__h3--stockLess">Sin Stock</h3>
+                  </div>
+                )}
               </div>
             </div>
             <div className="itemAdditionalDetail">

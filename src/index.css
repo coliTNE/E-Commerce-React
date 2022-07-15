@@ -521,6 +521,10 @@ footer {
   color: var(--fieryRose);
 }
 
+.itemMainDetail__h3--stockLess {
+  color: var(--fieryRose);
+}
+
 .itemCheckout__stockCounter {
   display: flex;
   justify-content: space-between;

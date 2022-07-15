@@ -1,6 +1,12 @@
 # Ecolimmerce
 
-## Librerias utilizadas
+## Deploy Url
+
+https://e-colimmerce.web.app/item/gqpS9z2AJxmUBBpGTcXm
+
+## Librerias utilizadas (Todas fueron utilizadas con fines esteticos.)
+
+### Usa npm install + las key de las siguientes librerias
 
 Font Awesome: @fortawesome/react-fontawesome
 

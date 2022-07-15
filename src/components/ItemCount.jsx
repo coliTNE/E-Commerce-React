@@ -25,6 +25,7 @@ export default function ItemCount({ itemDescrip, initial, productSize }) {
     if (productSize) {
       isInCart(id);
       addItem(itemDescrip, counter, productSize);
+
       Swal.fire({
         title: "Añadiste el producto al carrito",
         icon: "success",
@@ -32,8 +33,8 @@ export default function ItemCount({ itemDescrip, initial, productSize }) {
         showConfirmButton: true,
         confirmButtonText: "VER CARRITO",
         denyButtonText: "SEGUIR COMPRANDO",
-        confirmButtonColor: "#7a9e7e",
-        denyButtonColor: "#7b9cda",
+        confirmButtonColor: "#53917e",
+        denyButtonColor: "#5288d0",
         padding: "3rem 3rem",
         allowOutsideClick: false,
         customClass: {
@@ -42,7 +43,7 @@ export default function ItemCount({ itemDescrip, initial, productSize }) {
         },
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate("/cart");
+          navigate("/cart", { replace: true });
         } else if (result.isDenied) {
           navigate("/inicio");
         }

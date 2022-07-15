@@ -2,7 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleXmark,
   faCircleCheck,
-  faBagShopping,
   faCircleMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
