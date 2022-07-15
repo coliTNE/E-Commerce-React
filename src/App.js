@@ -34,7 +34,7 @@ function App() {
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/nosotros" element={<About />} />
-          <Route path="contacto" element={<Contact />} />
+          <Route path="/contacto" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
