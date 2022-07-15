@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# Ecolimmerce
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Librerias utilizadas
 
-## Available Scripts
+Font Awesome: @fortawesome/react-fontawesome
+Font Awesome Free Icons: @fortawesome/free-solid-svg-icons
+SweetAlert2: sweetalert2
 
-In the project directory, you can run:
+### INICIO
 
-### `npm start`
+En esta ventana se ven los filtradores que luego nos redireccionan a las lista de productos.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### NOSOTROS, CONTACTO
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+"Nosotros" contiene la vision del e-colimmerce y "Contacto" que contiene un form para mandar un comentario (solo visual).
 
-### `npm test`
+## CATEGORY
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Esta ventana contiene la vista de los productos filtrados.
 
-### `npm run build`
+## ITEM
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Esta ventana contiene la vision de un producto en particular.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Cart
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Cart consta de 3 layouts pero se muestra 1 solo de acuerdo los pasos para comprar nuestros productos deseados
 
-### `npm run eject`
+## Uso de la aplicacion
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+En el inicio tienes los filtros que mostraran solo las zapatillas de la marca elegida, al clickear en una de ellas, seras redireccionado a "/category/LA-MARCA-ELEGIDA".
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+A su vez, clickear en una zapatilla en particular, se abrira una ventana "/item/ID-DE-LA-ZAPATILLA" donde se mostrara la vista ampliada de esta zapatilla.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Agregar un producto al carrito te da la opcion de ir a este mismo o ser redireccionado al inicio.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+En el carrito podemos ver el resumen de nuestra compra, si continuamos tendremos que llenar un corto formulario con nuestro datos. Ya validados estos se nos mostrara la vista de nuestro ticket de compra con nuevamente el resumen de esta, nuestro datos y nuestro numero de orden.

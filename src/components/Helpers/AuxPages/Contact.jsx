@@ -85,14 +85,14 @@ export default function Contact() {
                   value={formValues.name}
                   onChange={handleChange}
                   className={
-                    !formErrors.name && formValues.name === ""
+                    !isSubmit
                       ? ""
                       : !formErrors.name
                       ? "form__successInput"
                       : "form__errorInput"
                   }
                 />
-                {!formErrors.name && formValues.name === "" ? (
+                {!isSubmit ? (
                   <FontAwesomeIcon
                     icon={faCircleMinus}
                     className="form__icon"
@@ -110,11 +110,7 @@ export default function Contact() {
                 )}
               </div>
               <p className="form__errorMessage">
-                {formValues.name === ""
-                  ? ""
-                  : !formErrors.name
-                  ? ""
-                  : formErrors.name}
+                {!isSubmit ? "" : !formErrors.name ? "" : formErrors.name}
               </p>
             </label>
 
@@ -129,14 +125,14 @@ export default function Contact() {
                   value={formValues.email}
                   onChange={handleChange}
                   className={
-                    !formErrors.email && formValues.email === ""
+                    !isSubmit
                       ? ""
                       : !formErrors.email
                       ? "form__successInput"
                       : "form__errorInput"
                   }
                 />
-                {!formErrors.email && formValues.email === "" ? (
+                {!isSubmit ? (
                   <FontAwesomeIcon
                     icon={faCircleMinus}
                     className="form__icon"
@@ -154,11 +150,7 @@ export default function Contact() {
                 )}
               </div>
               <p className="form__errorMessage">
-                {formValues.email === ""
-                  ? ""
-                  : !formErrors.email
-                  ? ""
-                  : formErrors.email}
+                {!isSubmit ? "" : !formErrors.email ? "" : formErrors.email}
               </p>
             </label>
 
@@ -173,14 +165,14 @@ export default function Contact() {
                   value={formValues.mobile}
                   onChange={handleChange}
                   className={
-                    !formErrors.mobile && formValues.mobile === ""
+                    !isSubmit
                       ? ""
                       : !formErrors.mobile
                       ? "form__successInput"
                       : "form__errorInput"
                   }
                 />
-                {!formErrors.mobile && formValues.mobile === "" ? (
+                {!isSubmit ? (
                   <FontAwesomeIcon
                     icon={faCircleMinus}
                     className="form__icon"
@@ -198,13 +190,10 @@ export default function Contact() {
                 )}
               </div>
               <p className="form__errorMessage">
-                {formValues.mobile === ""
-                  ? ""
-                  : !formErrors.mobile
-                  ? ""
-                  : formErrors.mobile}
+                {!isSubmit ? "" : !formErrors.mobile ? "" : formErrors.mobile}
               </p>
             </label>
+
             <label htmlFor="comentary" className="form__label">
               Comentario
               <div className="form__textTareaContainer">
@@ -214,7 +203,7 @@ export default function Contact() {
                   value={formValues.comentary}
                   onChange={handleChange}
                   className={
-                    !formErrors.comentary && formValues.comentary === ""
+                    !isSubmit
                       ? ""
                       : !formErrors.comentary
                       ? "form__successInput"
@@ -223,7 +212,7 @@ export default function Contact() {
                 />
               </div>
               <p className="form__errorMessage">
-                {formValues.comentary === ""
+                {!isSubmit
                   ? ""
                   : !formErrors.comentary
                   ? ""

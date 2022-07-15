@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleXmark,
   faCircleCheck,
+  faBagShopping,
   faCircleMinus,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect } from "react";
@@ -14,7 +15,6 @@ export default function Form({ createOrder }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormErrors(validate(formValues));
     setFormValues({ ...formValues, [name]: value });
   };
 
@@ -68,14 +68,14 @@ export default function Form({ createOrder }) {
             value={formValues.name}
             onChange={handleChange}
             className={
-              !formErrors.name && formValues.name === ""
+              !isSubmit
                 ? ""
                 : !formErrors.name
                 ? "form__successInput"
                 : "form__errorInput"
             }
           />
-          {!formErrors.name && formValues.name === "" ? (
+          {!isSubmit ? (
             <FontAwesomeIcon icon={faCircleMinus} className="form__icon" />
           ) : !formErrors.name ? (
             <FontAwesomeIcon
@@ -90,11 +90,7 @@ export default function Form({ createOrder }) {
           )}
         </div>
         <p className="form__errorMessage">
-          {formValues.name === ""
-            ? ""
-            : !formErrors.name
-            ? ""
-            : formErrors.name}
+          {!isSubmit ? "" : !formErrors.name ? "" : formErrors.name}
         </p>
       </label>
 
@@ -109,14 +105,14 @@ export default function Form({ createOrder }) {
             value={formValues.email}
             onChange={handleChange}
             className={
-              !formErrors.email && formValues.email === ""
+              !isSubmit
                 ? ""
                 : !formErrors.email
                 ? "form__successInput"
                 : "form__errorInput"
             }
           />
-          {!formErrors.email && formValues.email === "" ? (
+          {!isSubmit ? (
             <FontAwesomeIcon icon={faCircleMinus} className="form__icon" />
           ) : !formErrors.email ? (
             <FontAwesomeIcon
@@ -131,11 +127,7 @@ export default function Form({ createOrder }) {
           )}
         </div>
         <p className="form__errorMessage">
-          {formValues.email === ""
-            ? ""
-            : !formErrors.email
-            ? ""
-            : formErrors.email}
+          {!isSubmit ? "" : !formErrors.email ? "" : formErrors.email}
         </p>
       </label>
 
@@ -150,14 +142,14 @@ export default function Form({ createOrder }) {
             value={formValues.mobile}
             onChange={handleChange}
             className={
-              !formErrors.mobile && formValues.mobile === ""
+              !isSubmit
                 ? ""
                 : !formErrors.mobile
                 ? "form__successInput"
                 : "form__errorInput"
             }
           />
-          {!formErrors.mobile && formValues.mobile === "" ? (
+          {!isSubmit ? (
             <FontAwesomeIcon icon={faCircleMinus} className="form__icon" />
           ) : !formErrors.mobile ? (
             <FontAwesomeIcon
@@ -172,16 +164,14 @@ export default function Form({ createOrder }) {
           )}
         </div>
         <p className="form__errorMessage">
-          {formValues.mobile === ""
-            ? ""
-            : !formErrors.mobile
-            ? ""
-            : formErrors.mobile}
+          {!isSubmit ? "" : !formErrors.mobile ? "" : formErrors.mobile}
         </p>
       </label>
 
       <button type="submit" className="form__btn">
-        <span>Comprar</span>
+        <div>
+          <span>Comprar</span>
+        </div>
       </button>
     </form>
   );
