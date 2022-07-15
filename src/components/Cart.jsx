@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 import Ticket from "./Helpers/CartSteps/Ticket";
 import Form from "./Helpers/CartSteps/Form";
-import Loading from "./Loading";
+import Loading from "./Helpers/AuxPages/Loading";
 
 export default function Cart() {
   const { cart, deleteItem, emptyCart, getItemPrice } = useContext(MyContext);

@@ -6,10 +6,12 @@ import { faCircleDot } from "@fortawesome/free-solid-svg-icons";
 export default function ItemDetail({ itemDescrip }) {
   const {
     brand,
+    shoe,
     type,
     name,
     colors,
     price,
+    fees,
     pictureUrl,
     images,
     sizes,
@@ -27,7 +29,9 @@ export default function ItemDetail({ itemDescrip }) {
           <div className="itemDetail">
             <div className="itemDetail__titleBox-mobile">
               <span className="mainData__type">{type}</span>
-              <h2>ZAPATILLAS {name}</h2>
+              <h2>
+                {shoe} {name}
+              </h2>
             </div>
 
             <div className="itemMainDetail">
@@ -79,11 +83,22 @@ export default function ItemDetail({ itemDescrip }) {
                 <div className="itemMainDetail__mainData">
                   <div className="itemDetail__titleBox-desktop">
                     <span className="mainData__type">{type}</span>
-                    <h2>ZAPATILLAS {name}</h2>
+                    <h2>
+                      {shoe} {name}
+                    </h2>
                   </div>
-                  <p className="mainData__price">{`$ ${price?.toLocaleString(
-                    "es"
-                  )}`}</p>
+                  <div className="mainData__purchase">
+                    <p className="mainData__price">{`$ ${price?.toLocaleString(
+                      "es"
+                    )}`}</p>
+                    {fees && (
+                      <p className="mainData__fees">
+                        {fees} cuotas sin interés de{" "}
+                        {`$ ${(price / fees).toLocaleString("es")}`}
+                      </p>
+                    )}
+                  </div>
+
                   <span className="mainData__colors">Colores: {colors}</span>
                 </div>
                 <div className="itemMainDetail__sizesList">

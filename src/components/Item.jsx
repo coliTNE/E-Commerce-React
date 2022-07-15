@@ -5,7 +5,7 @@ export default function Item({ product }) {
 
   return (
     <div className="shoeCards__card">
-      <div>
+      <div className="card__imgContainer">
         <img
           src={pictureUrl}
           alt={`zapatilla deportiva ${brand}`}

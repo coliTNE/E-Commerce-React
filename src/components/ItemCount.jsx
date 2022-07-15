@@ -32,8 +32,8 @@ export default function ItemCount({ itemDescrip, initial, productSize }) {
         showConfirmButton: true,
         confirmButtonText: "VER CARRITO",
         denyButtonText: "SEGUIR COMPRANDO",
-        confirmButtonColor: "#53917e",
-        denyButtonColor: "#5288d0",
+        confirmButtonColor: "#7a9e7e",
+        denyButtonColor: "#7b9cda",
         padding: "3rem 3rem",
         allowOutsideClick: false,
         customClass: {

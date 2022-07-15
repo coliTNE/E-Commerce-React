@@ -8,9 +8,9 @@ import NavBar from "./components/NavBar";
 import { initializeApp } from "firebase/app";
 import Sidebar from "./components/Sidebar";
 import Footer from "./components/Footer";
-import Loading from "./components/Loading";
-import PageNotFound from "./components/PageNotFound";
-import About from "./components/About";
+import PageNotFound from "./components/Helpers/AuxPages/PageNotFound";
+import About from "./components/Helpers/AuxPages/About";
+import Contact from "./components/Helpers/AuxPages/Contact";
 
 function App() {
   initializeApp({
@@ -34,6 +34,7 @@ function App() {
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/nosotros" element={<About />} />
+          <Route path="contacto" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />

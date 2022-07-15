@@ -9,7 +9,7 @@ import {
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import CategoryContainer from "./Helpers/Category/CategoryContainer";
-import Loading from "./Loading";
+import Loading from "./Helpers/AuxPages/Loading";
 
 export default function ItemListContainer() {
   const { brand } = useParams();
