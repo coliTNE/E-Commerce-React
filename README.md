@@ -2,7 +2,7 @@
 
 ## Deploy Url
 
-https://e-colimmerce.web.app/item/gqpS9z2AJxmUBBpGTcXm
+https://e-colimmerce.web.app
 
 ## Librerias utilizadas (Todas fueron utilizadas con fines esteticos.)
 
