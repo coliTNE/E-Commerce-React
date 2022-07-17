@@ -1,12 +1,25 @@
-import { createContext, useState } from "react";
-import { doc, updateDoc, getFirestore } from "firebase/firestore";
+import { createContext, useState, useEffect } from "react";
 
 export const MyContext = createContext({});
 
 const { Provider } = MyContext;
 
+const localCart = () => {
+  let storage = localStorage.getItem("cart");
+
+  if (storage) {
+    return JSON.parse(storage);
+  } else {
+    return [];
+  }
+};
+
 export default function CartContext({ children }) {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(localCart());
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const isInCart = (id) => {
     return cart.some((item) => item.id === id);
